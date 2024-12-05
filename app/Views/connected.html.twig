@@ -1,0 +1,11 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+{% block body %}
+    <h1>Bienvenue <?= esc(session()->get('nom') ?? 'Visiteur') ?></h1>
+
+
+    <a href="/logout">Se déconnecter</a>
+{% endblock %}
+

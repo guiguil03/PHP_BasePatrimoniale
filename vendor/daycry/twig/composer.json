@@ -1,0 +1,77 @@
+{
+    "name": "daycry/twig",
+    "description": "twig for Codeigniter 4",
+    "keywords":
+    [
+        "codeigniter", "twig", "templates", "codeigniter4", "html"
+    ],
+    "homepage": "https://github.com/daycry/twig",
+    "authors":
+    [
+        {
+            "name": "daycry",
+            "homepage": "https://github.com/daycry",
+            "role": "Developer"
+        }
+    ],
+    "license": "MIT",
+    "require":
+    {
+        "php": ">=7.4",
+        "twig/twig": "^3.1.1"
+    },
+    "require-dev":
+    {
+        "codeigniter4/devkit": "*",
+        "codeigniter4/framework": "^4",
+        "rector/rector": "1.2.7"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload":
+    {
+        "psr-4":
+        {
+            "Daycry\\Twig\\": "src/"
+        }
+    },
+    "autoload-dev":
+    {
+        "psr-4":
+        {
+            "Tests\\": "tests/",
+            "Tests\\Support\\": "tests/_support"
+        },
+        "files": ["tests/_support/Functions/twigFunctions.php"]
+    },
+    "scripts": {
+        "analyze": [
+            "phpstan analyze"
+        ],
+        "sa": "@analyze",
+        "ci": [
+            "Composer\\Config::disableProcessTimeout",
+            "@cs",
+            "@deduplicate",
+            "@analyze",
+            "@test"
+        ],
+        "cs": [
+            "Composer\\Config::disableProcessTimeout",
+            "php-cs-fixer fix --ansi --verbose --dry-run --diff"
+        ],
+        "cs-fix": [ 
+            "Composer\\Config::disableProcessTimeout",
+            "php-cs-fixer fix --ansi --verbose --diff"
+        ],
+        "style": "@cs-fix",
+        "deduplicate": "php phpcpd.phar src/",
+        "mutate": "infection --threads=2 --skip-initial-tests --coverage=build/phpunit",
+        "test": "phpunit"
+    },
+    "config": {
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    }
+}

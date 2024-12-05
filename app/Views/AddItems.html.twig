@@ -1,0 +1,115 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Ajouter des éléments à votre base de données {% endblock %}
+
+{% block content %}
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+
+    .page {
+        max-width: 800px;
+        margin: 3rem auto;
+        padding: 2rem;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .page h1 {
+        font-weight: 700;
+        font-size: 24px;
+        color: #6a0dad;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .formulaire {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .formulaire .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .formulaire label {
+        font-weight: 600;
+        font-size: 14px;
+        color: #6a0dad;
+        margin-bottom: 0.5rem;
+    }
+
+    .formulaire input[type="text"],
+    .formulaire input[type="email"] {
+        padding: 0.75rem;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f5f5f5;
+        transition: border-color 0.3s;
+    }
+
+    .formulaire .submit-btn {
+        background-color: #6a0dad;
+        color: #fff;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        font-size: 16px;
+        font-weight: 700;
+        border-radius: 5px;
+        cursor: pointer;
+        align-self: center;
+        margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        .page {
+            padding: 1.5rem;
+        }
+
+        .formulaire input[type="text"],
+        .formulaire input[type="email"] {
+            font-size: 14px;
+            padding: 0.5rem;
+        }
+
+        .formulaire .submit-btn {
+            padding: 0.5rem 1rem;
+            font-size: 14px;
+        }
+    }
+</style>
+
+<div class="page">
+    <h1>Ajouter des éléments dans votre base de données</h1>
+    <form class="formulaire" method="POST" action="{{ base_url('Items') }}">
+    <div class="form-group">
+            <label for="nom">NOM</label>
+            <input type="text" name="nom" id="nom" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="description">DESCRIPTION</label>
+            <input type="text" name="description" id="description" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="localisation">LOCALISATION</label>
+            <input type="text" name="localisation" id="localisation" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="typeMateriel">TYPEMATERIEL</label>
+            <input type="text" name="typeMateriel" id="typeMateriel" class="form-control" required>
+        </div>
+        
+      
+        <button type="submit" class="submit-btn">Ajouter</button>
+    </form>
+</div>
+
+{% endblock %}
