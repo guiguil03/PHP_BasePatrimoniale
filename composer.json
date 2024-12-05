@@ -1,0 +1,6 @@
+{
+    "require": {
+        "codeigniter4/framework": "^4.5",
+        "kenjis/codeigniter-ss-twig": "^4.2",
+    }
+}

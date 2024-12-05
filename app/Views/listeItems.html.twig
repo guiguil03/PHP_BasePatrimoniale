@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Liste des Items
+{% endblock %}
+
+{% block content %}
+
+    <h1>Liste des Produits</h1>
+
+    <!-- Formulaire de recherche -->
+    <form method="get" action="{{ base_url('/blog') }}">
+        <input type="text" name="search" value="{{ searchTerm }}" placeholder="Rechercher un produit..." />
+        <button type="submit">Rechercher</button>
+    </form>
+
+    <!-- Affichage des produits -->
+    {% if products is not empty %}
+        <ul>
+        {% for product in products %}
+            <li>
+                <div>
+                    <h2>{{ product.nom }}</h2>
+                    <img src="{{ base_url('images/' ~ product.image) }}" alt="{{ product.nom }}" width="150" />
+                    <p><strong>Description:</strong> {{ product.adescription }}</p>
+                    <p><strong>Localisation:</strong> {{ product.localisation }}</p>
+                    <p><strong>Type de matériel:</strong> {{ product.typeMateriel }}</p>
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucun produit trouvé.</p>
+    {% endif %}
+
+{% endblock %}
