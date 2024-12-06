@@ -4,16 +4,24 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
+use \Kenjis\CI4Twig\Twig;
+
 
 class Items extends BaseController
 {
-    public function index()
-    {
-    }
+   
     public function ItemsList() :string{
-        return $this->twig->render("listeItems.html");
+        $db = \Config\Database::connect(); 
+        
+        $query = $db->query("SELECT * FROM Items");
+        $data['items'] = $query->getResult(); 
+        if (empty($data['items'])) {
+            log_message('error', 'Aucun produit trouvé dans la base de données');
+        }
 
+        return $this->twig->render("listeItems.html", $data);
     }
+    
     public function ItemsForm() :string{
         return $this->twig->render("addItems.html");
 

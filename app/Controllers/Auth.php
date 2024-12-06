@@ -7,6 +7,9 @@ use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Helpers\UserHelper;
 
+use \Kenjis\CI4Twig\Twig;
+
+
 
 class Auth extends BaseController
 {
@@ -40,7 +43,7 @@ class Auth extends BaseController
 
         
         if (empty($nom) || empty($adresseMail)) {
-            return $this->twig->render('registerForm.html', [
+            return $this->twig->render('register.html', [
                 'error' => 'Tous les champs sont obligatoires.'
             ]);
         }
@@ -65,11 +68,11 @@ class Auth extends BaseController
 
     }
 
-    public function ConnexionForm() :string{
+    public function connexionForm() :string{
         return $this->twig->render('connexion.html');
     }
 
-    public function Connexion() {
+    public function connexion() {
         $nom = $this->request->getVar("nom");
         $adresseMail =$this->request->getVar("mail");
         $db = \Config\Database::connect();
@@ -109,6 +112,6 @@ class Auth extends BaseController
     }
 
     public function connected():string{
-        return $this->twig-render("connected.html");
+        return $this->twig-render("/");
     }
 }

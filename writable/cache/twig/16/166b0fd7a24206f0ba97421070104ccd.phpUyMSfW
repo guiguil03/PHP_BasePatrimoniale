@@ -1,0 +1,200 @@
+<?php
+
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Extension\CoreExtension;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+use Twig\TemplateWrapper;
+
+/* listeItems.html.twig */
+class __TwigTemplate_9ddd18692810129f53cadcd78ae84291 extends Template
+{
+    private Source $source;
+    /**
+     * @var array<string, Template>
+     */
+    private array $macros = [];
+
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->source = $this->getSourceContext();
+
+        $this->blocks = [
+            'title' => [$this, 'block_title'],
+            'content' => [$this, 'block_content'],
+        ];
+    }
+
+    protected function doGetParent(array $context): bool|string|Template|TemplateWrapper
+    {
+        // line 1
+        return "base.html.twig";
+    }
+
+    protected function doDisplay(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $this->parent = $this->loadTemplate("base.html.twig", "listeItems.html.twig", 1);
+        yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
+    }
+
+    // line 3
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_title(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        // line 4
+        yield "Liste des Items
+";
+        yield from [];
+    }
+
+    // line 7
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_content(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        // line 8
+        yield "
+<h1>Liste des Produits</h1>
+
+<!-- Formulaire de recherche -->
+<form method=\"get\" action=\"";
+        // line 12
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("/blog"), "html", null, true);
+        yield "\">
+    <input type=\"text\" name=\"search\" value=\"";
+        // line 13
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((array_key_exists("searchTerm", $context)) ? (Twig\Extension\CoreExtension::default(($context["searchTerm"] ?? null), "")) : ("")), "html", null, true);
+        yield "\" placeholder=\"Rechercher un produit...\" />
+    <button type=\"submit\">Rechercher</button>
+</form>
+
+<!-- Affichage des produits -->
+  ";
+        // line 18
+        if ( !Twig\Extension\CoreExtension::testEmpty(($context["products"] ?? null))) {
+            // line 19
+            yield "        <div class=\"product-list\">
+            ";
+            // line 20
+            $context['_parent'] = $context;
+            $context['_seq'] = CoreExtension::ensureTraversable(($context["products"] ?? null));
+            foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
+                // line 21
+                yield "                <div class=\"product-item\">
+                    <div class=\"product-header\">
+                        <h2>";
+                // line 23
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "nom", [], "any", false, false, false, 23), "html", null, true);
+                yield "</h2>
+                    </div>
+                    <div class=\"product-details\">
+                        <p><strong>Description:</strong> ";
+                // line 26
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "adescription", [], "any", false, false, false, 26), "html", null, true);
+                yield "</p>
+                        <p><strong>Localisation:</strong> ";
+                // line 27
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "localisation", [], "any", false, false, false, 27), "html", null, true);
+                yield "</p>
+                        <p><strong>Type de matériel:</strong> ";
+                // line 28
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "typeMateriel", [], "any", false, false, false, 28), "html", null, true);
+                yield "</p>
+                    </div>
+                </div>
+            ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_key'], $context['product'], $context['_parent']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 32
+            yield "        </div>
+    ";
+        } else {
+            // line 34
+            yield "        <p>Aucun produit trouvé.</p>
+    ";
+        }
+        yield from [];
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getTemplateName(): string
+    {
+        return "listeItems.html.twig";
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function isTraitable(): bool
+    {
+        return false;
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getDebugInfo(): array
+    {
+        return array (  131 => 34,  127 => 32,  117 => 28,  113 => 27,  109 => 26,  103 => 23,  99 => 21,  95 => 20,  92 => 19,  90 => 18,  82 => 13,  78 => 12,  72 => 8,  65 => 7,  59 => 4,  52 => 3,  41 => 1,);
+    }
+
+    public function getSourceContext(): Source
+    {
+        return new Source("{% extends 'base.html.twig' %}
+
+{% block title %}
+Liste des Items
+{% endblock %}
+
+{% block content %}
+
+<h1>Liste des Produits</h1>
+
+<!-- Formulaire de recherche -->
+<form method=\"get\" action=\"{{ base_url('/blog') }}\">
+    <input type=\"text\" name=\"search\" value=\"{{ searchTerm|default('') }}\" placeholder=\"Rechercher un produit...\" />
+    <button type=\"submit\">Rechercher</button>
+</form>
+
+<!-- Affichage des produits -->
+  {% if products is not empty %}
+        <div class=\"product-list\">
+            {% for product in products %}
+                <div class=\"product-item\">
+                    <div class=\"product-header\">
+                        <h2>{{ product.nom }}</h2>
+                    </div>
+                    <div class=\"product-details\">
+                        <p><strong>Description:</strong> {{ product.adescription }}</p>
+                        <p><strong>Localisation:</strong> {{ product.localisation }}</p>
+                        <p><strong>Type de matériel:</strong> {{ product.typeMateriel }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Aucun produit trouvé.</p>
+    {% endif %}
+{% endblock %}", "listeItems.html.twig", "/home/vagrant/Site/app/Views/listeItems.html.twig");
+    }
+}

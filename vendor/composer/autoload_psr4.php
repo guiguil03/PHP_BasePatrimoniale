@@ -11,8 +11,9 @@ return array(
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/src'),
+    'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Laminas\\Escaper\\' => array($vendorDir . '/laminas/laminas-escaper/src'),
     'Kenjis\\CI4Twig\\' => array($vendorDir . '/kenjis/codeigniter-ss-twig/src/CI4Twig'),
-    'Daycry\\Twig\\' => array($vendorDir . '/daycry/twig/src'),
+    'Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),
     'CodeIgniter\\' => array($vendorDir . '/codeigniter4/framework/system'),
 );

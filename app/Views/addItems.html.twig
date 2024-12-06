@@ -27,7 +27,7 @@ Ajouter ItemsForm
 
         h1 {
             text-align: center;
-            color: #a150d5;
+            color: #6a0dad;
         }
 
         label {
@@ -46,7 +46,7 @@ Ajouter ItemsForm
         }
 
         button {
-            background-color: #a150d5;
+            background-color: #6a0dad;
             color: white;
             padding: 10px 15px;
             border: none;
@@ -83,25 +83,25 @@ Ajouter ItemsForm
             </ul>
         {% endif %}
 
-        <form action="{{ base_url('/blog/store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ base_url('/Items') }}" method="post" enctype="multipart/form-data">
             <div>
                 <label for="nom">Nom du produit</label>
-                <input type="text" name="nom" id="nom" value="{{ old('nom') }}" required>
+                <input type="text" name="nom" id="nom" value="{{ 'nom'}}" required>
             </div>
 
             <div>
                 <label for="adescription">Description</label>
-                <textarea name="adescription" id="adescription" rows="4" required>{{ old('adescription') }}</textarea>
+                <textarea name="adescription" id="adescription" rows="4" required>{{ 'adescription' }}</textarea>
             </div>
 
             <div>
                 <label for="localisation">Localisation</label>
-                <input type="text" name="localisation" id="localisation" value="{{ old('localisation') }}" required>
+                <input type="text" name="localisation" id="localisation" value="{{ 'localisation' }}" required>
             </div>
 
             <div>
                 <label for="typeMateriel">Type de matériel</label>
-                <input type="text" name="typeMateriel" id="typeMateriel" value="{{ old('typeMateriel') }}" required>
+                <input type="text" name="typeMateriel" id="typeMateriel" value="{{ 'typeMateriel' }}" required>
             </div>
 
             <div>

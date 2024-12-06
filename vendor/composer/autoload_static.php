@@ -31,6 +31,7 @@ class ComposerStaticInitd79c96b7e5d79532bc7ea39612c9f2c2
         'P' => 
         array (
             'Psr\\Log\\' => 8,
+            'Psr\\Container\\' => 14,
         ),
         'L' => 
         array (
@@ -40,9 +41,9 @@ class ComposerStaticInitd79c96b7e5d79532bc7ea39612c9f2c2
         array (
             'Kenjis\\CI4Twig\\' => 15,
         ),
-        'D' => 
+        'F' => 
         array (
-            'Daycry\\Twig\\' => 12,
+            'Faker\\' => 6,
         ),
         'C' => 
         array (
@@ -71,6 +72,10 @@ class ComposerStaticInitd79c96b7e5d79532bc7ea39612c9f2c2
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
         ),
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
         'Laminas\\Escaper\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-escaper/src',
@@ -79,9 +84,9 @@ class ComposerStaticInitd79c96b7e5d79532bc7ea39612c9f2c2
         array (
             0 => __DIR__ . '/..' . '/kenjis/codeigniter-ss-twig/src/CI4Twig',
         ),
-        'Daycry\\Twig\\' => 
+        'Faker\\' => 
         array (
-            0 => __DIR__ . '/..' . '/daycry/twig/src',
+            0 => __DIR__ . '/..' . '/fakerphp/faker/src/Faker',
         ),
         'CodeIgniter\\' => 
         array (

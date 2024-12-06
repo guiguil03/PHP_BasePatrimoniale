@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Blog extends Migration
+class Items extends Migration
 {
     public function up()
     {
