@@ -172,8 +172,6 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
             flex: 1;
             min-width: 300px;
             max-width: 45%;
-                        box-shadow: 10px 10px 10px 0px grey;
-
         }
         .block-info{
             padding: 20px;
@@ -188,13 +186,8 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
             margin:10px;
             width:300px;
             height:200px;
-            background: white;
-            box-shadow: 10px 10px 10px 0px grey;
+            border:2px solid red;
         }
-        .block1 p, .block2 p,.block3 p,.block4 p{
-            font-weight:900;
-        }
-
           @media (max-width: 768px) {
         /* Barre latérale : devient masquée ou rétractable */
         .sidebar {
@@ -266,49 +259,49 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
     </div>
     <button class=\"btn btn-outline-light d-md-none\" id=\"toggleSidebar\">☰</button>
     ";
-        // line 218
+        // line 211
         if (($context["user_name"] ?? null)) {
-            // line 219
+            // line 212
             yield "        <span class=\"identifier\">Bienvenue, ";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["user_name"] ?? null), "html", null, true);
             yield "</span>
     ";
         } else {
-            // line 221
+            // line 214
             yield "        <a href=\"";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("connexionForm"), "html", null, true);
             yield "\" class=\"identifier\">Se connecter</a>
     ";
         }
-        // line 223
+        // line 216
         yield "</div>
 
 
 
     <div class=\"sidebar\">
         <a href=\"";
-        // line 228
+        // line 221
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("/"), "html", null, true);
         yield "\"> Accueil</a>
         <a href=\"";
-        // line 229
+        // line 222
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("ItemsForm"), "html", null, true);
         yield "\">Ajout d'un élément</a>
         <a href=\"";
-        // line 230
+        // line 223
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["path_maps"] ?? null), "html", null, true);
         yield "\">Maps</a>
         <a href=\"";
-        // line 231
+        // line 224
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("ItemsList"), "html", null, true);
         yield "\">Consultation des éléments</a>
     </div>
 
     <div class=\"main-content\">
        ";
-        // line 235
+        // line 228
         yield from $this->unwrap()->yieldBlock('content', $context, $blocks);
-        // line 276
+        // line 253
         yield "    </div>
 
     <!-- Intégration de Chart.js -->
@@ -393,9 +386,9 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
 
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js\" integrity=\"sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></>
 ";
-        // line 359
+        // line 336
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 361
+        // line 338
         yield "</body>
 </html>";
         yield from [];
@@ -424,14 +417,14 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
         yield from [];
     }
 
-    // line 235
+    // line 228
     /**
      * @return iterable<null|scalar|\Stringable>
      */
     public function block_content(array $context, array $blocks = []): iterable
     {
         $macros = $this->macros;
-        // line 236
+        // line 229
         yield "    <div class=\"dashboard-title\">Tableau de Bord</div>
     <div class=\"charts\">
         <div class=\"chart\">
@@ -448,34 +441,18 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
     <div class=\"block-info\">
         <div class= \"block1\">
         <img src=\"Assets/desk.png\" width=\"85\" height=\"85\"/>
-        <p> Total Salles </p>
         
          </div>
-        <div class= \"block2\"> 
-        <img src=\"Assets/ux.png\" width=\"85\" height=\"85\"/>
-        <p> Nombres Ordinateurs</p>
-
-
-        </div>
-        <div class= \"block3\">
-        <img src=\"Assets/check.png\" width=\"85\" height=\"85\"/>
-        <p> Etat fonctionnel </p>
-
-
-        </div>
-        <div class= \"block4\">
-        <img src=\"Assets/optimizing.png\" width=\"85\" height=\"85\"/>
-        <p> En Maintenance </p>
-
-
-        </div>
+        <div class= \"block2\"> sdf</div>
+        <div class= \"block3\">xwv </div>
+        <div class= \"block4\">sdf </div>
 
     </div>
     ";
         yield from [];
     }
 
-    // line 359
+    // line 336
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -506,7 +483,7 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  479 => 359,  435 => 236,  428 => 235,  416 => 13,  405 => 5,  399 => 361,  397 => 359,  312 => 276,  310 => 235,  303 => 231,  299 => 230,  295 => 229,  291 => 228,  284 => 223,  278 => 221,  272 => 219,  270 => 218,  65 => 15,  63 => 13,  52 => 5,  46 => 1,);
+        return array (  456 => 336,  428 => 229,  421 => 228,  409 => 13,  398 => 5,  392 => 338,  390 => 336,  305 => 253,  303 => 228,  296 => 224,  292 => 223,  288 => 222,  284 => 221,  277 => 216,  271 => 214,  265 => 212,  263 => 211,  65 => 15,  63 => 13,  52 => 5,  46 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -635,8 +612,6 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
             flex: 1;
             min-width: 300px;
             max-width: 45%;
-                        box-shadow: 10px 10px 10px 0px grey;
-
         }
         .block-info{
             padding: 20px;
@@ -651,13 +626,8 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
             margin:10px;
             width:300px;
             height:200px;
-            background: white;
-            box-shadow: 10px 10px 10px 0px grey;
+            border:2px solid red;
         }
-        .block1 p, .block2 p,.block3 p,.block4 p{
-            font-weight:900;
-        }
-
           @media (max-width: 768px) {
         /* Barre latérale : devient masquée ou rétractable */
         .sidebar {
@@ -762,27 +732,11 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
     <div class=\"block-info\">
         <div class= \"block1\">
         <img src=\"Assets/desk.png\" width=\"85\" height=\"85\"/>
-        <p> Total Salles </p>
         
          </div>
-        <div class= \"block2\"> 
-        <img src=\"Assets/ux.png\" width=\"85\" height=\"85\"/>
-        <p> Nombres Ordinateurs</p>
-
-
-        </div>
-        <div class= \"block3\">
-        <img src=\"Assets/check.png\" width=\"85\" height=\"85\"/>
-        <p> Etat fonctionnel </p>
-
-
-        </div>
-        <div class= \"block4\">
-        <img src=\"Assets/optimizing.png\" width=\"85\" height=\"85\"/>
-        <p> En Maintenance </p>
-
-
-        </div>
+        <div class= \"block2\"> sdf</div>
+        <div class= \"block3\">xwv </div>
+        <div class= \"block4\">sdf </div>
 
     </div>
     {% endblock %}
