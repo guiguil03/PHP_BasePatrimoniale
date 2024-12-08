@@ -12,7 +12,7 @@ class BlogModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nom', 'adescription', 'localisation', 'typeMateriel'];
+    protected $allowedFields    = ['nom', 'adescription', 'localisation', 'typeMateriel', 'image_url'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

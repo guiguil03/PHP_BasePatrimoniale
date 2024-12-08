@@ -9,7 +9,7 @@ Liste des Items
 <style>
 .product-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 20fr));
     gap: 20px;
     margin-top: 20px;
 }
@@ -36,22 +36,37 @@ Liste des Items
 .product-details p {
     font-size: 1rem;
     margin: 5px 0;
+    
 }
 
 .product-details strong {
-    color: #007bff;
+    color: #6a0dad;
+}
+.input {
+  color: black;
+  border: 2px solid #8707ff;
+  border-radius: 10px;
+  padding: 10px 25px;
+  background: transparent;
+  max-width: 190px;
+}
+
+.input:active {
+  box-shadow: 2px 2px 15px #8707ff inset;
 }
 </style>
 
 <h1>Liste des Produits</h1>
 
-<!-- Formulaire de recherche -->
 <form method="get" action="{{ base_url('/blog') }}">
-    <input type="text" name="search" value="{{ searchTerm|default('') }}" placeholder="Rechercher un produit..." />
-    <button type="submit">Rechercher</button>
+<input
+  placeholder="Rechercher vos elements"
+  class="input"
+  name="text"
+  type="text"
+/>    <button type="submit">Rechercher</button>
 </form>
 
-<!-- Affichage des produits -->
   {% if items is not empty %}
         <div class="product-list">
             {% for items in items %}
@@ -63,6 +78,7 @@ Liste des Items
                         <p><strong>Description:</strong> {{ items.adescription }}</p>
                         <p><strong>Localisation:</strong> {{ items.localisation }}</p>
                         <p><strong>Type de matériel:</strong> {{ items.typeMateriel }}</p>
+                        <img src={{items.image_url}} widht="100" height="100"/>
                     </div>
                 </div>
             {% endfor %}

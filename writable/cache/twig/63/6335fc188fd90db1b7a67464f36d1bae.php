@@ -79,12 +79,15 @@ class __TwigTemplate_3a5ca4fc24f8e42d1b3892fffb655321 extends Template
             margin: 0;
             padding: 0;
         }
+        .main-content{
+            background-color:grey;
+        }
 
         .container {
             max-width: 600px;
             margin: 50px auto;
             padding: 20px;
-            background-color: #3c3c3c;
+            background-color: black;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
@@ -140,16 +143,16 @@ class __TwigTemplate_3a5ca4fc24f8e42d1b3892fffb655321 extends Template
 
         <!-- Affichage des erreurs de validation -->
         ";
-        // line 78
+        // line 81
         if (($context["validation"] ?? null)) {
-            // line 79
+            // line 82
             yield "            <ul class=\"error\">
                 ";
-            // line 80
+            // line 83
             $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, ($context["validation"] ?? null), "getErrors", [], "method", false, false, false, 80));
+            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, ($context["validation"] ?? null), "getErrors", [], "method", false, false, false, 83));
             foreach ($context['_seq'] as $context["_key"] => $context["error"]) {
-                // line 81
+                // line 84
                 yield "                    <li>";
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["error"], "html", null, true);
                 yield "</li>
@@ -158,20 +161,20 @@ class __TwigTemplate_3a5ca4fc24f8e42d1b3892fffb655321 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['error'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 83
+            // line 86
             yield "            </ul>
         ";
         }
-        // line 85
+        // line 88
         yield "
         <form action=\"";
-        // line 86
+        // line 89
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("/Items"), "html", null, true);
         yield "\" method=\"post\" enctype=\"multipart/form-data\">
             <div>
                 <label for=\"nom\">Nom du produit</label>
                 <input type=\"text\" name=\"nom\" id=\"nom\" value=\"";
-        // line 89
+        // line 92
         yield "nom";
         yield "\" required>
             </div>
@@ -179,7 +182,7 @@ class __TwigTemplate_3a5ca4fc24f8e42d1b3892fffb655321 extends Template
             <div>
                 <label for=\"adescription\">Description</label>
                 <textarea name=\"adescription\" id=\"adescription\" rows=\"4\" required>";
-        // line 94
+        // line 97
         yield "adescription";
         yield "</textarea>
             </div>
@@ -187,7 +190,7 @@ class __TwigTemplate_3a5ca4fc24f8e42d1b3892fffb655321 extends Template
             <div>
                 <label for=\"localisation\">Localisation</label>
                 <input type=\"text\" name=\"localisation\" id=\"localisation\" value=\"";
-        // line 99
+        // line 102
         yield "localisation";
         yield "\" required>
             </div>
@@ -195,7 +198,7 @@ class __TwigTemplate_3a5ca4fc24f8e42d1b3892fffb655321 extends Template
             <div>
                 <label for=\"typeMateriel\">Type de matériel</label>
                 <input type=\"text\" name=\"typeMateriel\" id=\"typeMateriel\" value=\"";
-        // line 104
+        // line 107
         yield "typeMateriel";
         yield "\" required>
             </div>
@@ -235,7 +238,7 @@ class __TwigTemplate_3a5ca4fc24f8e42d1b3892fffb655321 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  199 => 104,  191 => 99,  183 => 94,  175 => 89,  169 => 86,  166 => 85,  162 => 83,  153 => 81,  149 => 80,  146 => 79,  144 => 78,  73 => 9,  66 => 8,  59 => 4,  52 => 3,  41 => 1,);
+        return array (  202 => 107,  194 => 102,  186 => 97,  178 => 92,  172 => 89,  169 => 88,  165 => 86,  156 => 84,  152 => 83,  149 => 82,  147 => 81,  73 => 9,  66 => 8,  59 => 4,  52 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -257,12 +260,15 @@ Ajouter ItemsForm
             margin: 0;
             padding: 0;
         }
+        .main-content{
+            background-color:grey;
+        }
 
         .container {
             max-width: 600px;
             margin: 50px auto;
             padding: 20px;
-            background-color: #3c3c3c;
+            background-color: black;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }

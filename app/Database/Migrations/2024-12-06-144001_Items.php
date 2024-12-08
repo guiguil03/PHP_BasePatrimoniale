@@ -31,6 +31,11 @@ class Items extends Migration
                 'type' => 'TEXT',
                 'null' => true,
             ],
+            'image_url' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+                'null' => true, // Permet de ne pas obliger l'image dans tous les enregistrements
+            ],
         ]);
         $this->forge->addKey('id_items', true);
         $this->forge->createTable('Items');
