@@ -212,8 +212,7 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
             font-size: 16px;
         }
          .sidebar {
-            transform:translateX(300px;)
-            width: 100%;
+            width: 160%;
             height: auto;
             position: relative;
             align-items:center;
@@ -244,49 +243,49 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
     </div>
     <button class=\"btn btn-outline-light d-md-none\" id=\"toggleSidebar\">☰</button>
     ";
-        // line 196
+        // line 195
         if (($context["user_name"] ?? null)) {
-            // line 197
+            // line 196
             yield "        <span class=\"identifier\">Bienvenue, ";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["user_name"] ?? null), "html", null, true);
             yield "</span>
     ";
         } else {
-            // line 199
+            // line 198
             yield "        <a href=\"";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("connexionForm"), "html", null, true);
             yield "\" class=\"identifier\">Se connecter</a>
     ";
         }
-        // line 201
+        // line 200
         yield "</div>
 
 
 
     <div class=\"sidebar\">
         <a href=\"";
-        // line 206
+        // line 205
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("/"), "html", null, true);
         yield "\"> Accueil</a>
         <a href=\"";
-        // line 207
+        // line 206
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("ItemsForm"), "html", null, true);
         yield "\">Ajout d'un élément</a>
         <a href=\"";
-        // line 208
+        // line 207
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["path_maps"] ?? null), "html", null, true);
         yield "\">Maps</a>
         <a href=\"";
-        // line 209
+        // line 208
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("ItemsList"), "html", null, true);
         yield "\">Consultation des éléments</a>
     </div>
 
     <div class=\"main-content\">
        ";
-        // line 213
+        // line 212
         yield from $this->unwrap()->yieldBlock('content', $context, $blocks);
-        // line 227
+        // line 226
         yield "    </div>
 
     <!-- Intégration de Chart.js -->
@@ -371,9 +370,9 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
 
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js\" integrity=\"sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></>
 ";
-        // line 310
+        // line 309
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 312
+        // line 311
         yield "</body>
 </html>";
         yield from [];
@@ -402,14 +401,14 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
         yield from [];
     }
 
-    // line 213
+    // line 212
     /**
      * @return iterable<null|scalar|\Stringable>
      */
     public function block_content(array $context, array $blocks = []): iterable
     {
         $macros = $this->macros;
-        // line 214
+        // line 213
         yield "    <div class=\"dashboard-title\">Tableau de Bord</div>
     <div class=\"charts\">
         <div class=\"chart\">
@@ -426,7 +425,7 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
         yield from [];
     }
 
-    // line 310
+    // line 309
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -457,7 +456,7 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  430 => 310,  413 => 214,  406 => 213,  394 => 13,  383 => 5,  377 => 312,  375 => 310,  290 => 227,  288 => 213,  281 => 209,  277 => 208,  273 => 207,  269 => 206,  262 => 201,  256 => 199,  250 => 197,  248 => 196,  65 => 15,  63 => 13,  52 => 5,  46 => 1,);
+        return array (  429 => 309,  412 => 213,  405 => 212,  393 => 13,  382 => 5,  376 => 311,  374 => 309,  289 => 226,  287 => 212,  280 => 208,  276 => 207,  272 => 206,  268 => 205,  261 => 200,  255 => 198,  249 => 196,  247 => 195,  65 => 15,  63 => 13,  52 => 5,  46 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -626,8 +625,7 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
             font-size: 16px;
         }
          .sidebar {
-            transform:translateX(300px;)
-            width: 100%;
+            width: 160%;
             height: auto;
             position: relative;
             align-items:center;

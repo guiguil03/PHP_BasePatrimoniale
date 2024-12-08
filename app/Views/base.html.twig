@@ -123,16 +123,84 @@
             min-width: 300px;
             max-width: 45%;
         }
+          @media (max-width: 768px) {
+        /* Barre latérale : devient masquée ou rétractable */
+        .sidebar {
+            width: 140%;
+            height: auto;
+            position: relative;
+            align-items:center;
+            flex-direction: row;
+            justify-content: center
+        }
+
+        .sidebar a {
+            margin: 10px;
+            font-size: 14px;
+        }
+
+        /* Contenu principal : prend toute la largeur */
+        .main-content {
+            margin-left: 0;
+            margin-top: 60px;
+        }
+
+        /* Organisation des graphiques : en une seule colonne */
+        .charts {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .chart {
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width: 576px) {
+        /* Réduction des tailles des titres et marges */
+        .top-bar .logo-container .title {
+            font-size: 16px;
+        }
+         .sidebar {
+            transform:translateX(300px;)
+            width: 100%;
+            height: auto;
+            position: r;
+            align-items:center;
+            flex-direction: row;
+            justify-content: center
+        }
+        .sidebar a {
+            font-size: 12px;
+            position:relative;
+            maring-right:400px;
+        }
+
+        .dashboard-title {
+            font-size: 18px;
+        }
+
+        .chart {
+            padding: 10px;
+        }
+    }
     </style>
 </head>
 <body>
     <div class="top-bar">
-        <div class="logo-container">
-        <img src="Assets/logo.png"/>
-            <div class="title">HERITAGE DATABASES</div>
-        </div>
-        <a href="{{ base_url('connexionForm') }}" class="identifier">Se connecter</a>
+    <div class="logo-container">
+        <img src="Assets/logo.png" alt="Logo"/>
+        <div class="title">HERITAGE DATABASES</div>
     </div>
+    <button class="btn btn-outline-light d-md-none" id="toggleSidebar">☰</button>
+    {% if user_name %}
+        <span class="identifier">Bienvenue, {{ user_name }}</span>
+    {% else %}
+        <a href="{{ base_url('connexionForm') }}" class="identifier">Se connecter</a>
+    {% endif %}
+</div>
+
+
 
     <div class="sidebar">
         <a href="{{base_url('/')}}"> Accueil</a>
@@ -160,57 +228,85 @@
 
     <!-- Intégration de Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        // Exemple de données pour les graphiques
-        const barCtx = document.getElementById('barChart').getContext('2d');
-        new Chart(barCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Catégorie A', 'Catégorie B', 'Catégorie C', 'Catégorie D'],
-                datasets: [{
-                    label: 'Valeurs',
-                    data: [12, 19, 3, 5],
-                    backgroundColor: ['#6a0dad', '#8e44ad', '#9b59b6', '#be90d4']
-                }]
-            }
-        });
-
-        const lineCtx = document.getElementById('lineChart').getContext('2d');
-        new Chart(lineCtx, {
-            type: 'line',
-            data: {
-                labels: ['1', '2', '3', '4', '5', '6', '7'],
-                datasets: [{
-                    label: 'Courbe 1',
-                    data: [1, 2, 1, 3, -1, -2, 1],
-                    borderColor: '#6a0dad',
-                    borderWidth: 2
-                }, {
-                    label: 'Courbe 2',
-                    data: [-1, -2, -1, -3, 1, 2, -1],
-                    borderColor: '#3498db',
-                    borderWidth: 2
-                }]
-            }
-        });
-
-        const pieCtx = document.getElementById('pieChart').getContext('2d');
-        new Chart(pieCtx, {
-            type: 'pie',
-            data: {
-                labels: ['Catégorie 1', 'Catégorie 2', 'Catégorie 3', 'Catégorie 4'],
-                datasets: [{
-                    data: [35, 25, 20, 20],
-                    backgroundColor: ['#6a0dad', '#8e44ad', '#3498db', '#9b59b6']
-                }]
-            }
-        });
-    </script>
     
+    <<script>
+
+
+    const sidebar = document.querySelector('.sidebar');
+    const toggleButton = document.getElementById('toggleSidebar');
+
+    toggleButton.addEventListener('click', () => {
+        sidebar.classList.toggle('d-none');
+    });
+
+    // Exemple de données pour les graphiques avec animations
+    const barCtx = document.getElementById('barChart').getContext('2d');
+    new Chart(barCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Catégorie A', 'Catégorie B', 'Catégorie C', 'Catégorie D'],
+            datasets: [{
+                label: 'Valeurs',
+                data: [12, 19, 3, 5],
+                backgroundColor: ['#6a0dad', '#8e44ad', '#9b59b6', '#be90d4']
+            }]
+        },
+        options: {
+            animation: {
+                duration: 1500, // Durée de l'animation en millisecondes
+                easing: 'easeOutBounce' // Type d'effet d'animation
+            }
+        }
+    });
+
+    const lineCtx = document.getElementById('lineChart').getContext('2d');
+    new Chart(lineCtx, {
+        type: 'line',
+        data: {
+            labels: ['1', '2', '3', '4', '5', '6', '7'],
+            datasets: [{
+                label: 'Courbe 1',
+                data: [1, 2, 1, 3, -1, -2, 1],
+                borderColor: '#6a0dad',
+                borderWidth: 2
+            }, {
+                label: 'Courbe 2',
+                data: [-1, -2, -1, -3, 1, 2, -1],
+                borderColor: '#3498db',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            animation: {
+                duration: 1200,
+                easing: 'easeInOutCubic' // Animation fluide
+            }
+        }
+    });
+
+    const pieCtx = document.getElementById('pieChart').getContext('2d');
+    new Chart(pieCtx, {
+        type: 'pie',
+        data: {
+            labels: ['Catégorie 1', 'Catégorie 2', 'Catégorie 3', 'Catégorie 4'],
+            datasets: [{
+                data: [35, 25, 20, 20],
+                backgroundColor: ['#6a0dad', '#8e44ad', '#3498db', '#9b59b6']
+            }]
+        },
+        options: {
+            animation: {
+                duration: 2000,
+                easing: 'easeOutQuart' // Apparition en douceur
+            }
+        }
+    });
+</script>
+
    
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></>
 {% block javascripts %}
 {% endblock %}
 </body>

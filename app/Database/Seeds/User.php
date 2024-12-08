@@ -3,6 +3,7 @@
 namespace App\Database\Seeds;
 
 use CodeIgniter\Database\Seeder;
+use Faker\Factory;
 
 class User extends Seeder
 {
@@ -19,7 +20,7 @@ class User extends Seeder
                 'adresseMail' => $email
             ];
 
-            $this->db->table('User')->insert($data);
+            $this->db->table('Users')->insert($data);
         }
     } 
 }

@@ -3,6 +3,7 @@
 namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
+use Faker\Factory as Faker;
 
 class User extends Migration
 {
