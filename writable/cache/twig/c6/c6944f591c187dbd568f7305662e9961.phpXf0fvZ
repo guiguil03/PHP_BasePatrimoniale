@@ -222,7 +222,7 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
         .sidebar a {
             font-size: 12px;
             position:relative;
-            left:150px;
+            left:200px;
         }
 
         .dashboard-title {
@@ -635,7 +635,7 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
         .sidebar a {
             font-size: 12px;
             position:relative;
-            left:150px;
+            left:200px;
         }
 
         .dashboard-title {
