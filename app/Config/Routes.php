@@ -13,4 +13,5 @@ $routes->post('register','Auth::Register');
 $routes->get('ItemsList', 'Items::ItemsList');
 $routes->get('ItemsForm', 'Items::ItemsForm');
 $routes->post('Items', 'Items::Items');
+$routes->get('details', 'Home::details');
 

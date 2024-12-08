@@ -192,7 +192,7 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
             box-shadow: 10px 10px 10px 0px grey;
         }
         .block1 p, .block2 p,.block3 p,.block4 p{
-            font-weight:907;
+            font-weight:9070
         }
 
           @media (max-width: 768px) {
@@ -655,7 +655,7 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
             box-shadow: 10px 10px 10px 0px grey;
         }
         .block1 p, .block2 p,.block3 p,.block4 p{
-            font-weight:907;
+            font-weight:9070
         }
 
           @media (max-width: 768px) {

@@ -21,6 +21,8 @@ Liste des Items
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+                box-shadow: 10px 10px 10px 0px grey;
+
 }
 
 .product-item:hover {
@@ -79,6 +81,7 @@ Liste des Items
                         <p><strong>Localisation:</strong> {{ items.localisation }}</p>
                         <p><strong>Type de matériel:</strong> {{ items.typeMateriel }}</p>
                         <img src={{items.image_url}} widht="100" height="100"/>
+                        <a href="{{ base_url('details') }}" class="input">More Details</a>
                     </div>
                 </div>
             {% endfor %}

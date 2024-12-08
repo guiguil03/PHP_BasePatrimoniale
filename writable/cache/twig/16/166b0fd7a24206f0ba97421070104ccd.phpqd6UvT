@@ -171,10 +171,10 @@ class __TwigTemplate_9ddd18692810129f53cadcd78ae84291 extends Template
                 // line 83
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "image_url", [], "any", false, false, false, 83), "html", null, true);
                 yield " widht=\"100\" height=\"100\"/>
-                        <a href=\"";
+                        <button href=\"";
                 // line 84
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("details"), "html", null, true);
-                yield "\" class=\"input\">More Details</a>
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("/Details"), "html", null, true);
+                yield "\"> More Details </button>
                     </div>
                 </div>
             ";
@@ -302,7 +302,7 @@ Liste des Items
                         <p><strong>Localisation:</strong> {{ items.localisation }}</p>
                         <p><strong>Type de matériel:</strong> {{ items.typeMateriel }}</p>
                         <img src={{items.image_url}} widht=\"100\" height=\"100\"/>
-                        <a href=\"{{ base_url('details') }}\" class=\"input\">More Details</a>
+                        <button href=\"{{base_url('/Details')}}\"> More Details </button>
                     </div>
                 </div>
             {% endfor %}
