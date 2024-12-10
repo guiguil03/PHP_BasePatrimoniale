@@ -172,13 +172,30 @@ class __TwigTemplate_9ddd18692810129f53cadcd78ae84291 extends Template
                 // line 84
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "typeMateriel", [], "any", false, false, false, 84), "html", null, true);
                 yield "</p>
-                        <img src=";
+                        <p><strong>Capacité:</strong> ";
                 // line 85
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "image_url", [], "any", false, false, false, 85), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "capacité", [], "any", false, false, false, 85), "html", null, true);
+                yield "</p>
+                        <p><strong>Nombre Tables</strong> ";
+                // line 86
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "NbTables", [], "any", false, false, false, 86), "html", null, true);
+                yield "</p>
+
+                        <p><strong>Nombre Etudiant</strong> ";
+                // line 88
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "NbEtudiants", [], "any", false, false, false, 88), "html", null, true);
+                yield "</p>
+                        <p><strong>Nombre Enseignants</strong> ";
+                // line 89
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "NbEnseignants", [], "any", false, false, false, 89), "html", null, true);
+                yield "</p>
+                        <img src=";
+                // line 90
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "image_url", [], "any", false, false, false, 90), "html", null, true);
                 yield " widht=\"100\" height=\"100\"/>
                         <a href=\"";
-                // line 86
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("details"), "html", null, true);
+                // line 91
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url(("details/" . CoreExtension::getAttribute($this->env, $this->source, $context["items"], "id", [], "any", false, false, false, 91))), "html", null, true);
                 yield "\" class=\"input\">More Details</a>
                     </div>
                 </div>
@@ -187,11 +204,11 @@ class __TwigTemplate_9ddd18692810129f53cadcd78ae84291 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['items'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 90
+            // line 95
             yield "        </div>
     ";
         } else {
-            // line 92
+            // line 97
             yield "        <p>Aucun produit trouvé.</p>
     ";
         }
@@ -219,7 +236,7 @@ class __TwigTemplate_9ddd18692810129f53cadcd78ae84291 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  195 => 92,  191 => 90,  181 => 86,  177 => 85,  173 => 84,  169 => 83,  165 => 82,  159 => 79,  155 => 77,  151 => 76,  148 => 75,  146 => 74,  138 => 69,  129 => 63,  72 => 8,  65 => 7,  59 => 4,  52 => 3,  41 => 1,);
+        return array (  212 => 97,  208 => 95,  198 => 91,  194 => 90,  190 => 89,  186 => 88,  181 => 86,  177 => 85,  173 => 84,  169 => 83,  165 => 82,  159 => 79,  155 => 77,  151 => 76,  148 => 75,  146 => 74,  138 => 69,  129 => 63,  72 => 8,  65 => 7,  59 => 4,  52 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -308,8 +325,13 @@ Liste des Items
                         <p><strong>Description:</strong> {{ items.adescription }}</p>
                         <p><strong>Localisation:</strong> {{ items.localisation }}</p>
                         <p><strong>Type de matériel:</strong> {{ items.typeMateriel }}</p>
+                        <p><strong>Capacité:</strong> {{ items.capacité }}</p>
+                        <p><strong>Nombre Tables</strong> {{ items.NbTables }}</p>
+
+                        <p><strong>Nombre Etudiant</strong> {{ items.NbEtudiants }}</p>
+                        <p><strong>Nombre Enseignants</strong> {{ items.NbEnseignants }}</p>
                         <img src={{items.image_url}} widht=\"100\" height=\"100\"/>
-                        <a href=\"{{ base_url('details') }}\" class=\"input\">More Details</a>
+                        <a href=\"{{ base_url('details/' ~ items.id) }}\" class=\"input\">More Details</a>
                     </div>
                 </div>
             {% endfor %}

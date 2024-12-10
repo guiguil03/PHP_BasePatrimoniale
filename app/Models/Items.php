@@ -12,7 +12,7 @@ class ItemsModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nom', 'adescription', 'localisation', 'typeMateriel', 'image_url'];
+    protected $allowedFields    = ['nom', 'adescription', 'localisation', 'typeMateriel','quantité', 'image_url','capacite', 'NbTables','NbEtudiants','NbEnseignants'];
 
     
 

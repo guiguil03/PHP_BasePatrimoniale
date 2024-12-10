@@ -82,8 +82,13 @@ Liste des Items
                         <p><strong>Description:</strong> {{ items.adescription }}</p>
                         <p><strong>Localisation:</strong> {{ items.localisation }}</p>
                         <p><strong>Type de matériel:</strong> {{ items.typeMateriel }}</p>
+                        <p><strong>Capacité:</strong> {{ items.capacité }}</p>
+                        <p><strong>Nombre Tables</strong> {{ items.NbTables }}</p>
+
+                        <p><strong>Nombre Etudiant</strong> {{ items.NbEtudiants }}</p>
+                        <p><strong>Nombre Enseignants</strong> {{ items.NbEnseignants }}</p>
                         <img src={{items.image_url}} widht="100" height="100"/>
-                        <a href="{{ base_url('details') }}" class="input">More Details</a>
+                        <a href="{{ base_url('details/' ~ items.id) }}" class="input">More Details</a>
                     </div>
                 </div>
             {% endfor %}

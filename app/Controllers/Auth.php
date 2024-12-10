@@ -22,9 +22,18 @@ class Auth extends BaseController
     {
         // Vérifiez que la session est bien démarrée
         if (!session()->has('nom')) {
-            session()->set('nom', '');  // Vous pouvez définir une valeur par défaut ici
+            session()->set('nom', '');  // Définir une valeur par défaut pour 'nom'
         }
+    
+        // Charger le service Twig
+    
+        // Ajouter la variable globale 'user_name' dans Twig
     }
+    public function renderTwig(string $template, array $data = []): string
+    {
+        return $this->twig->render($template, $data);
+    }
+    
 
     public function RegisterForm():string{
         return $this->twig-> render('register.html');
@@ -78,8 +87,11 @@ class Auth extends BaseController
         $db = \Config\Database::connect();
         $builder= $db->table('Users');
 
-        if(empty($nom) || empty($adresseMail)){
-            return redirect()->back()->with('error', 'Veuillez remplir tous les champs.');
+        if (empty($nom) || empty($adresseMail)) {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'Veuillez remplir tous les champs.',
+            ]);
         }
 
         $query = $builder-> getWhere(['nom'=> $nom, 'adresseMail'=> $adresseMail]);
@@ -90,17 +102,13 @@ class Auth extends BaseController
             // Lors de la connexion, enregistrez le nom dans la session
             session()->set('nom', $response->nom);
             $data['connected'] = true;
+            return $this->twig->render("base.html", [
+                'good' => 'Vous etes bien connecté']);
         } else {
             $data['connected'] = false;
         }
         return $this->response->setJSON($data);
-        if($response){
-             return $this->twig->render("base.html", [
-                 'good' => 'Vous etes bien connecté']);
-         }else{
-             return redirect()->back()->with('error', 'Nom ou prénom incorrect.');
-         }
-
+       
 
 
     }

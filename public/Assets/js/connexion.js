@@ -1,33 +1,27 @@
 $(function() {
-    $('#btnConnexion').on('click', function() {
-        console.log('le bouton est cliqué');
+    $('#btnConnexion').on('click', function () {
         let nom = $('#nom').val();
         let mail = $('#adresseMail').val();
 
         $.ajax({
-            url: 'connexion',  
-            method: "POST",
+            url: '/connexion',
+            method: 'POST',
             data: {
                 'nom': nom,
-                'mail': mail
+                'adresseMail': mail,
             },
-            dataType: "json",
-            success: function (data) {
-                if (!data.connected) {
-                    $('#btnMsg').text('Erreur de connexion');
-                    $('#btnMsg').removeClass('d-none');
+            dataType: 'json',
+            success: function (response) {
+                if (response.status === 'error') {
+                    alert(response.message); // Pop-up en cas d'erreur
                 } else {
-                    $('#btnMsg').addClass('d-none');  // Cacher le message d'erreur
-                    $('#userName').removeClass('d-none');
-                    alert("Vous etes connecter sous le pseudo " + nom)
-                    
-                    window.location = '/';
-                }
+                    alert(response.message); // Pop-up en cas de succès
+                    window.location.href = "/MapController";
+               }
             },
-            error: function() {
-                // Gérer les erreurs réseau ou autres
-        
-            }    
+            error: function () {
+                alert('Une erreur réseau s\'est produite.');
+            },
         });
     });
 

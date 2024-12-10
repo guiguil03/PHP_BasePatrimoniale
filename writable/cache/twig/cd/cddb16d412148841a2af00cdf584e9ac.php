@@ -69,44 +69,90 @@ class __TwigTemplate_a89ffe6055102504808d8f00f9e84b7e extends Template
     {
         $macros = $this->macros;
         // line 8
-        yield " <style>
-        #map {
-            height: 500px;
-            width: 100%;
-        }
-    </style>
-    <script src=\"https://maps.googleapis.com/maps/api/js?key=";
+        yield "<style>
+    #map {
+        height: 80vh;
+        width: 100%;
+    }
+</style>
+<script src=\"https://maps.googleapis.com/maps/api/js?key=";
         // line 14
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["api_key"] ?? null), "html", null, true);
+        yield "AIzaSyCpBFteXH4NlRlT0U8Ax1a497IS4a3C70U";
         yield "\"></script>
-    <script>
-        function initMap() {
-            const evryBounds = {
-                north: 49.600,
-                south: 40.500,
-                east: 2.5500,
-                west: 2.4021
-            };
+<script>
+    function initMap() {
+        const evryBounds = {
+            north: 49.600,
+            south: 40.500,
+            east: 2.5500,
+            west: 2.4021
+        };
 
-            const evryCenter = { lat: 48.629828, lng:2.401782 };
+        const evryCenter = { lat: 48.629828, lng: 2.441782 };
 
-            const map = new google.maps.Map(document.getElementById(\"map\"), {
-                zoom: 10,
-                center: evryCenter,
-               
-                restriction: {
-                    latLngBounds: evryBounds,
-                    strictBounds: true
-                }
-            });
+        const map = new google.maps.Map(document.getElementById(\"map\"), {
+            zoom: 10,
+            center: evryCenter,
+            restriction: {
+                latLngBounds: evryBounds,
+                strictBounds: true
+            }
+        });
 
+        // Marqueurs
+        const markers = [
+            {
+                position: { lat: 48.629828, lng: 2.441782 },
+                title: \"Évry Centre\",
+                photoUrl: \"https://example.com/photo1.jpg\", // URL de l'image
+                description: \"Description de l'Évry Centre\"
+            },
+            {
+                position: { lat: 48.632500, lng: 2.446800 },
+                title: \"Université d'Évry\",
+                photoUrl: \"https://example.com/photo2.jpg\",
+                description: \"Description de l'Université d'Évry\"
+            },
+            {
+                position: { lat: 48.635500, lng: 2.451500 },
+                title: \"Mairie d'Évry\",
+                photoUrl: \"https://example.com/photo3.jpg\",
+                description: \"Description de la Mairie d'Évry\"
+            },
+            {
+                position: { lat: 48.627000, lng: 2.430000 },
+                title: \"Parc des Coquibus\",
+                photoUrl: \"https://example.com/photo4.jpg\",
+                description: \"Description du Parc des Coquibus\"
+            }
+        ];
+
+        // Ajouter les marqueurs et les infowindows
+        markers.forEach((markerData) => {
             const marker = new google.maps.Marker({
-                position: evryCenter,
+                position: markerData.position,
                 map: map,
-                title: \"Évry\"
+                title: markerData.title
             });
-        }
-    </script>
+
+            // Créer un infowindow pour chaque marqueur
+            const infowindow = new google.maps.InfoWindow({
+                content: `
+                    <div>
+                        <h3>\${markerData.title}</h3>
+                        <img src=\"\${markerData.photoUrl}\" alt=\"\${markerData.title}\" style=\"width: 200px; height: auto;\">
+                        <p>\${markerData.description}</p>
+                    </div>
+                `
+            });
+
+            // Ajouter un événement de clic pour ouvrir l'infowindow
+            marker.addListener('click', () => {
+                infowindow.open(map, marker);
+            });
+        });
+    }
+</script>
 </head>
 <body onload=\"initMap()\">
     <h1>Carte d'Évry</h1>
@@ -149,41 +195,87 @@ Maps
 {% endblock %}
 
 {% block content %}
- <style>
-        #map {
-            height: 500px;
-            width: 100%;
-        }
-    </style>
-    <script src=\"https://maps.googleapis.com/maps/api/js?key={{ api_key }}\"></script>
-    <script>
-        function initMap() {
-            const evryBounds = {
-                north: 49.600,
-                south: 40.500,
-                east: 2.5500,
-                west: 2.4021
-            };
+<style>
+    #map {
+        height: 80vh;
+        width: 100%;
+    }
+</style>
+<script src=\"https://maps.googleapis.com/maps/api/js?key={{ \"AIzaSyCpBFteXH4NlRlT0U8Ax1a497IS4a3C70U\" }}\"></script>
+<script>
+    function initMap() {
+        const evryBounds = {
+            north: 49.600,
+            south: 40.500,
+            east: 2.5500,
+            west: 2.4021
+        };
 
-            const evryCenter = { lat: 48.629828, lng:2.401782 };
+        const evryCenter = { lat: 48.629828, lng: 2.441782 };
 
-            const map = new google.maps.Map(document.getElementById(\"map\"), {
-                zoom: 10,
-                center: evryCenter,
-               
-                restriction: {
-                    latLngBounds: evryBounds,
-                    strictBounds: true
-                }
-            });
+        const map = new google.maps.Map(document.getElementById(\"map\"), {
+            zoom: 10,
+            center: evryCenter,
+            restriction: {
+                latLngBounds: evryBounds,
+                strictBounds: true
+            }
+        });
 
+        // Marqueurs
+        const markers = [
+            {
+                position: { lat: 48.629828, lng: 2.441782 },
+                title: \"Évry Centre\",
+                photoUrl: \"https://example.com/photo1.jpg\", // URL de l'image
+                description: \"Description de l'Évry Centre\"
+            },
+            {
+                position: { lat: 48.632500, lng: 2.446800 },
+                title: \"Université d'Évry\",
+                photoUrl: \"https://example.com/photo2.jpg\",
+                description: \"Description de l'Université d'Évry\"
+            },
+            {
+                position: { lat: 48.635500, lng: 2.451500 },
+                title: \"Mairie d'Évry\",
+                photoUrl: \"https://example.com/photo3.jpg\",
+                description: \"Description de la Mairie d'Évry\"
+            },
+            {
+                position: { lat: 48.627000, lng: 2.430000 },
+                title: \"Parc des Coquibus\",
+                photoUrl: \"https://example.com/photo4.jpg\",
+                description: \"Description du Parc des Coquibus\"
+            }
+        ];
+
+        // Ajouter les marqueurs et les infowindows
+        markers.forEach((markerData) => {
             const marker = new google.maps.Marker({
-                position: evryCenter,
+                position: markerData.position,
                 map: map,
-                title: \"Évry\"
+                title: markerData.title
             });
-        }
-    </script>
+
+            // Créer un infowindow pour chaque marqueur
+            const infowindow = new google.maps.InfoWindow({
+                content: `
+                    <div>
+                        <h3>\${markerData.title}</h3>
+                        <img src=\"\${markerData.photoUrl}\" alt=\"\${markerData.title}\" style=\"width: 200px; height: auto;\">
+                        <p>\${markerData.description}</p>
+                    </div>
+                `
+            });
+
+            // Ajouter un événement de clic pour ouvrir l'infowindow
+            marker.addListener('click', () => {
+                infowindow.open(map, marker);
+            });
+        });
+    }
+</script>
 </head>
 <body onload=\"initMap()\">
     <h1>Carte d'Évry</h1>

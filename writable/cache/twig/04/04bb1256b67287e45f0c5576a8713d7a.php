@@ -165,20 +165,23 @@ class __TwigTemplate_0198ee8bb87c436167db38f7cd1d3129 extends Template
 
 </form>
 </div>
-<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js\" integrity=\"sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
+<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js\" integrity=\"sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\">
+
+</script>
+
 
 ";
         yield from [];
     }
 
-    // line 105
+    // line 108
     /**
      * @return iterable<null|scalar|\Stringable>
      */
     public function block_javascripts(array $context, array $blocks = []): iterable
     {
         $macros = $this->macros;
-        // line 106
+        // line 109
         yield "<script src=\"Assets/js/connexion.js\"></script>
 ";
         yield from [];
@@ -205,7 +208,7 @@ class __TwigTemplate_0198ee8bb87c436167db38f7cd1d3129 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  182 => 106,  175 => 105,  154 => 87,  73 => 8,  66 => 7,  60 => 4,  53 => 3,  42 => 1,);
+        return array (  185 => 109,  178 => 108,  154 => 87,  73 => 8,  66 => 7,  60 => 4,  53 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -309,7 +312,10 @@ Se connecter
 
 </form>
 </div>
-<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js\" integrity=\"sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
+<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js\" integrity=\"sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\">
+
+</script>
+
 
 {% endblock %}
 

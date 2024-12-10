@@ -41,6 +41,8 @@ class Autoload extends AutoloadConfig
      */
     public $psr4 = [
         APP_NAMESPACE => APPPATH,
+        'Config'   => APPPATH . 'Config',
+        'Kenjis\CI4Twig' => ROOTPATH . 'vendor/kenjis/codeigniter4-twig/src',
     ];
 
     /**

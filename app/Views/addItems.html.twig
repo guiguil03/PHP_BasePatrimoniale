@@ -186,13 +186,11 @@ document.addEventListener('DOMContentLoaded', () => {
             <label for="quantite_1">Quantité</label>
             <input type="number" name="quantite[]" id="quantite_1" min="1" value="1" required>
             <div class="class">
-            <button type="button" class="supp remove-item" onclick="removeMateriel(this)">Supprimer</button>
             <button type="button" class="add" id="add-materiel">Ajouter un matériel</button>
         </div>
     </div>
     
     </div>
-</div>
 
             <div>
                 <label for="Capacité">Capacité</label>
@@ -210,10 +208,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 <label for="NombreEnseignants">Nombre d'enseignants</label>
                 <input type="number" name="NombreEnseignants" id="NombreEnseignants"min="0" value="{{ 'NombreEnseignants' }}" required>
             </div>
-            <div>
-                <label for="NormeHandicap">Norme Handicap</label>
-                <input type="checkbox" name="NormeHandicap" id="NormeHandicap" min=01" value="{{ 'NormeHandicap' }}" required>
+             <div>
+                <label for="campus">Image</label>
+                <input type="text" name="image_url" id="image_url" value="{{ 'image_url'}}" required>
             </div>
+
+          
             
 
            

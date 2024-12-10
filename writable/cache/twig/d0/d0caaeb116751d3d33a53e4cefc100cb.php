@@ -197,18 +197,17 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class=\"container\">
         <h1>Ajouter un élément</h1>
 
-        <!-- Affichage des erreurs de validation -->
         ";
-        // line 137
+        // line 136
         if (($context["validation"] ?? null)) {
-            // line 138
+            // line 137
             yield "            <ul class=\"error\">
                 ";
-            // line 139
+            // line 138
             $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, ($context["validation"] ?? null), "getErrors", [], "method", false, false, false, 139));
+            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, ($context["validation"] ?? null), "getErrors", [], "method", false, false, false, 138));
             foreach ($context['_seq'] as $context["_key"] => $context["error"]) {
-                // line 140
+                // line 139
                 yield "                    <li>";
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["error"], "html", null, true);
                 yield "</li>
@@ -217,20 +216,20 @@ document.addEventListener('DOMContentLoaded', () => {
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['error'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 142
+            // line 141
             yield "            </ul>
         ";
         }
-        // line 144
+        // line 143
         yield "
         <form class=\"form\" method=\"POST\" action=\"";
-        // line 145
+        // line 144
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("/Items"), "html", null, true);
         yield "\"  enctype=\"multipart/form-data\">
             <div>
                 <label for=\"nom\">Nom de la salle</label>
                 <input type=\"text\" name=\"nom\" id=\"nom\" value=\"";
-        // line 148
+        // line 147
         yield "nom";
         yield "\" required>
             </div>
@@ -243,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div>
                 <label for=\"campus\">Campus</label>
                 <input type=\"text\" name=\"campus\" id=\"campus\" value=\"";
-        // line 158
+        // line 157
         yield "campus";
         yield "\" required>
             </div>
@@ -277,49 +276,49 @@ document.addEventListener('DOMContentLoaded', () => {
             <label for=\"quantite_1\">Quantité</label>
             <input type=\"number\" name=\"quantite[]\" id=\"quantite_1\" min=\"1\" value=\"1\" required>
             <div class=\"class\">
-            <button type=\"button\" class=\"supp remove-item\" onclick=\"removeMateriel(this)\">Supprimer</button>
             <button type=\"button\" class=\"add\" id=\"add-materiel\">Ajouter un matériel</button>
         </div>
     </div>
     
     </div>
-</div>
 
             <div>
                 <label for=\"Capacité\">Capacité</label>
-                <input type=\"number\" name=\"Capacité\" id=\"Capacité\" value=\"";
-        // line 200
+                <input type=\"number\" name=\"Capacité\" id=\"Capacité\" min=\"0\" value=\"";
+        // line 197
         yield "Capacité";
         yield "\" required>
             </div>
             <div>
                 <label for=\"NombreTables\">Nombre de Tables</label>
-                <input type=\"number\" name=\"NombreTables\" id=\"NombreTables\" value=\"";
-        // line 204
+                <input type=\"number\" name=\"NombreTables\" id=\"NombreTables\" min=\"0\" value=\"";
+        // line 201
         yield "NombreTables";
         yield "\" required>
             </div>
              <div>
                 <label for=\"NombreEtudiants\">Nombre d'étudiants</label>
-                <input type=\"number\" name=\"NombreEtudiants\" id=\"NombreEtudiants\" value=\"";
-        // line 208
+                <input type=\"number\" name=\"NombreEtudiants\" id=\"NombreEtudiants\" min=\"0\"value=\"";
+        // line 205
         yield "NombreEtudiants";
         yield "\" required>
             </div>
              <div>
-                <label for=\"NombreEnseignants\">Nombre d'enseognants</label>
-                <input type=\"number\" name=\"NombreEnseignants\" id=\"NombreEnseignants\" value=\"";
-        // line 212
+                <label for=\"NombreEnseignants\">Nombre d'enseignants</label>
+                <input type=\"number\" name=\"NombreEnseignants\" id=\"NombreEnseignants\"min=\"0\" value=\"";
+        // line 209
         yield "NombreEnseignants";
         yield "\" required>
             </div>
-            <div>
-                <label for=\"NormeHandicap\">Norme Handicap</label>
-                <input type=\"checkbox\" name=\"NormeHandicap\" id=\"NormeHandicap\" value=\"";
-        // line 216
-        yield "NormeHandicap";
-        yield "\">
+             <div>
+                <label for=\"campus\">Image</label>
+                <input type=\"text\" name=\"image_url\" id=\"image_url\" value=\"";
+        // line 213
+        yield "image_url";
+        yield "\" required>
             </div>
+
+          
             
 
            
@@ -354,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     public function getDebugInfo(): array
     {
-        return array (  320 => 216,  313 => 212,  306 => 208,  299 => 204,  292 => 200,  247 => 158,  234 => 148,  228 => 145,  225 => 144,  221 => 142,  212 => 140,  208 => 139,  205 => 138,  203 => 137,  73 => 9,  66 => 8,  59 => 4,  52 => 3,  41 => 1,);
+        return array (  317 => 213,  310 => 209,  303 => 205,  296 => 201,  289 => 197,  246 => 157,  233 => 147,  227 => 144,  224 => 143,  220 => 141,  211 => 139,  207 => 138,  204 => 137,  202 => 136,  73 => 9,  66 => 8,  59 => 4,  52 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -494,7 +493,6 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class=\"container\">
         <h1>Ajouter un élément</h1>
 
-        <!-- Affichage des erreurs de validation -->
         {% if validation %}
             <ul class=\"error\">
                 {% for error in validation.getErrors() %}
@@ -548,34 +546,34 @@ document.addEventListener('DOMContentLoaded', () => {
             <label for=\"quantite_1\">Quantité</label>
             <input type=\"number\" name=\"quantite[]\" id=\"quantite_1\" min=\"1\" value=\"1\" required>
             <div class=\"class\">
-            <button type=\"button\" class=\"supp remove-item\" onclick=\"removeMateriel(this)\">Supprimer</button>
             <button type=\"button\" class=\"add\" id=\"add-materiel\">Ajouter un matériel</button>
         </div>
     </div>
     
     </div>
-</div>
 
             <div>
                 <label for=\"Capacité\">Capacité</label>
-                <input type=\"number\" name=\"Capacité\" id=\"Capacité\" value=\"{{ 'Capacité' }}\" required>
+                <input type=\"number\" name=\"Capacité\" id=\"Capacité\" min=\"0\" value=\"{{ 'Capacité' }}\" required>
             </div>
             <div>
                 <label for=\"NombreTables\">Nombre de Tables</label>
-                <input type=\"number\" name=\"NombreTables\" id=\"NombreTables\" value=\"{{ 'NombreTables' }}\" required>
+                <input type=\"number\" name=\"NombreTables\" id=\"NombreTables\" min=\"0\" value=\"{{ 'NombreTables' }}\" required>
             </div>
              <div>
                 <label for=\"NombreEtudiants\">Nombre d'étudiants</label>
-                <input type=\"number\" name=\"NombreEtudiants\" id=\"NombreEtudiants\" value=\"{{ 'NombreEtudiants' }}\" required>
+                <input type=\"number\" name=\"NombreEtudiants\" id=\"NombreEtudiants\" min=\"0\"value=\"{{ 'NombreEtudiants' }}\" required>
             </div>
              <div>
-                <label for=\"NombreEnseignants\">Nombre d'enseognants</label>
-                <input type=\"number\" name=\"NombreEnseignants\" id=\"NombreEnseignants\" value=\"{{ 'NombreEnseignants' }}\" required>
+                <label for=\"NombreEnseignants\">Nombre d'enseignants</label>
+                <input type=\"number\" name=\"NombreEnseignants\" id=\"NombreEnseignants\"min=\"0\" value=\"{{ 'NombreEnseignants' }}\" required>
             </div>
-            <div>
-                <label for=\"NormeHandicap\">Norme Handicap</label>
-                <input type=\"checkbox\" name=\"NormeHandicap\" id=\"NormeHandicap\" value=\"{{ 'NormeHandicap' }}\">
+             <div>
+                <label for=\"campus\">Image</label>
+                <input type=\"text\" name=\"image_url\" id=\"image_url\" value=\"{{ 'image_url'}}\" required>
             </div>
+
+          
             
 
            

@@ -148,7 +148,7 @@
           @media (max-width: 768px) {
         /* Barre latérale : devient masquée ou rétractable */
         .sidebar {
-            width: 140%;
+            width: auto;
             height: auto;
             position: relative;
             align-items:center;
@@ -159,6 +159,8 @@
         .sidebar a {
             margin: 10px;
             font-size: 14px;
+            position:relative;
+            text-align:center
         }
 
         /* Contenu principal : prend toute la largeur */
@@ -176,15 +178,55 @@
         .chart {
             max-width: 100%;
         }
+          }
+          @media (max-width: 1024px) {
+        /* Barre latérale : devient masquée ou rétractable */
+        .sidebar {
+            width: auto;
+            height: auto;
+            position: relative;
+            align-items:center;
+            flex-direction: row;
+            justify-content: center
+        }
+
+        .sidebar a {
+            margin: 10px;
+            font-size: 14px;
+            position:relative;
+            left:140px;
+        }
+
+        /* Contenu principal : prend toute la largeur */
+        .main-content {
+            margin-left: 0;
+            margin-top: 60px;
+        }
+
+        /* Organisation des graphiques : en une seule colonne */
+        .charts {
+            flex-direction: column;
+            gap: 15px;
+            height: 1400px;
+        }
+
+        .chart {
+            max-width: 100%;
+        }
     }
 
     @media (max-width: 576px) {
-        /* Réduction des tailles des titres et marges */
+       .main-content{
+        width:auto;
+       }
         .top-bar .logo-container .title {
             font-size: 16px;
         }
+        .logo-container,  {
+            width:100%;
+        }
          .sidebar {
-            width: 149%;
+            width: auto;
             height: auto;
             position: r;
             align-items:center;
@@ -192,9 +234,8 @@
             justify-content: center
         }
         .sidebar a {
-            font-size: 12px;
+            font-size: 10px;
             position:relative;
-            left:150px;
         }
 
         .dashboard-title {
@@ -209,18 +250,20 @@
     </style>
 </head>
 <body>
-    <div class="top-bar">
+  <div class="top-bar">
     <div class="logo-container">
         <img src="Assets/logo.png" alt="Logo"/>
         <div class="title">HERITAGE DATABASES</div>
     </div>
     <button class="btn btn-outline-light d-md-none" id="toggleSidebar">☰</button>
-    {% if user_name %}
-        <span class="identifier">Bienvenue, {{ user_name }}</span>
-    {% else %}
-        <a href="{{ base_url('connexionForm') }}" class="identifier">Se connecter</a>
-    {% endif %}
+   {% if user_name %}
+    <span class="identifier">Bienvenue, {{ user_name }}</span>
+    <a href="{{ base_url('deconnexion') }}" class="identifier">Se déconnecter</a>
+{% else %}
+    <a href="{{ base_url('connexionForm') }}" class="identifier">Se connecter</a>
+{% endif %}
 </div>
+
 
 
 

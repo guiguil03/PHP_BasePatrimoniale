@@ -178,6 +178,7 @@ class __TwigTemplate_b4f1fcd48a417e428af315a808962313 extends Template
         yield "\">Sign up</a>
     </span>
   </form>
+  <div id=\"btnMsg\" class=\"d-none\"></div>
 </div>
 
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js\" integrity=\"sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
@@ -186,14 +187,14 @@ class __TwigTemplate_b4f1fcd48a417e428af315a808962313 extends Template
         yield from [];
     }
 
-    // line 114
+    // line 115
     /**
      * @return iterable<null|scalar|\Stringable>
      */
     public function block_javascripts(array $context, array $blocks = []): iterable
     {
         $macros = $this->macros;
-        // line 115
+        // line 116
         yield "<script src=\"/Assets/js/connexion.js\"></script>
 ";
         yield from [];
@@ -220,7 +221,7 @@ class __TwigTemplate_b4f1fcd48a417e428af315a808962313 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  197 => 115,  190 => 114,  177 => 104,  167 => 97,  154 => 87,  73 => 8,  66 => 7,  60 => 4,  53 => 3,  42 => 1,);
+        return array (  198 => 116,  191 => 115,  177 => 104,  167 => 97,  154 => 87,  73 => 8,  66 => 7,  60 => 4,  53 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -331,6 +332,7 @@ Se connecter
       <a href=\"{{ base_url('registerForm') }}\">Sign up</a>
     </span>
   </form>
+  <div id=\"btnMsg\" class=\"d-none\"></div>
 </div>
 
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js\" integrity=\"sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
