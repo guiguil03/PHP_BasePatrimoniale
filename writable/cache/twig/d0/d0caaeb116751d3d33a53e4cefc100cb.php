@@ -91,7 +91,7 @@ class __TwigTemplate_d5c1ec10559a19275cd71e30562fe920 extends Template
 
         h1 {
             text-align: center;
-            color: #a150d5;
+            color: white;
         }
 
         label {
@@ -110,7 +110,7 @@ class __TwigTemplate_d5c1ec10559a19275cd71e30562fe920 extends Template
         }
 
         button {
-            background-color: #a150d5;
+            background-color: #6a0dad;
             color: white;
             padding: 10px 15px;
             border: none;
@@ -200,10 +200,7 @@ class __TwigTemplate_d5c1ec10559a19275cd71e30562fe920 extends Template
         yield "\" required>
             </div>
 
-            <div>
-                <label for=\"image\">Image</label>
-                <input type=\"file\" name=\"image\" id=\"image\" accept=\"image/*\" required>
-            </div>
+           
 
             <button type=\"submit\">Ajouter le produit</button>
         </form>
@@ -269,7 +266,7 @@ Ajouter ItemsForm
 
         h1 {
             text-align: center;
-            color: #a150d5;
+            color: white;
         }
 
         label {
@@ -288,7 +285,7 @@ Ajouter ItemsForm
         }
 
         button {
-            background-color: #a150d5;
+            background-color: #6a0dad;
             color: white;
             padding: 10px 15px;
             border: none;
@@ -346,10 +343,7 @@ Ajouter ItemsForm
                 <input type=\"text\" name=\"typeMateriel\" id=\"typeMateriel\" value=\"{{ 'typeMateriel' }}\" required>
             </div>
 
-            <div>
-                <label for=\"image\">Image</label>
-                <input type=\"file\" name=\"image\" id=\"image\" accept=\"image/*\" required>
-            </div>
+           
 
             <button type=\"submit\">Ajouter le produit</button>
         </form>

@@ -46,6 +46,7 @@ class Items extends BaseController
             'localisation' => $localisation,
             'typeMateriel' => $typeMateriel
         ]);
+        return $this->twig->render ("base.html");
     }
     
 }

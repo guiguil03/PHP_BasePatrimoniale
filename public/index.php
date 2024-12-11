@@ -48,6 +48,9 @@ if (getcwd() . DIRECTORY_SEPARATOR !== FCPATH) {
 require FCPATH . '../app/Config/Paths.php';
 // ^^^ Change this line if you move your application folder
 
+define('GOOGLE_MAPS_API_KEY', 'AIzaSyCpBFteXH4NlRlT0U8Ax1a497IS4a3C70U');
+
+
 $paths = new Config\Paths();
 
 // LOAD THE FRAMEWORK BOOTSTRAP FILE

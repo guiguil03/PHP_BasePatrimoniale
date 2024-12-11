@@ -84,29 +84,33 @@ Se connecter
 
 </style>
 <div class="divForm">
-<form class="form" method="POST" action="{{ base_url('connexion') }}">
- <span class="input-span">
-    <label for="nom" class="label">Nom </label>
-    <input type="text" name="nom" id="nom" required
-  /></span>
-  <span class="input-span">
-    <label for="adresseMail" class="label">Email</label>
-    <input type="text" name="adresseMail" id="adresseMail" required
-  /></span>
- 
-  <span class="span"><a href="{{base_url('registerForm')}}">Forgot password?</a></span>
-  <button class="submit" type="button" id="btnConnexion" class="btn btn-primary">Se Connecter</button>
-  <div class="mb-3">
-    <span id="btnMsg" class="btn btn-outline-danger d-none"></span>
-  </div>
-  <span class="span">Vous n'avez pas de compte ? <a href="{{base_url('registerForm')}}">Sign up</a></span>
-</form>
+  <form class="form" method="GET" action="{{ base_url('connexion') }}">
+    <span class="input-span">
+      <label for="nom" class="label">Nom</label>
+      <input type="text" name="nom" id="nom" required />
+    </span>
+    <span class="input-span">
+      <label for="adresseMail" class="label">Email</label>
+      <input type="text" name="adresseMail" id="adresseMail" required />
+    </span>
+    <span class="span">
+      <a href="{{ base_url('registerForm') }}">Forgot password?</a>
+    </span>
+    <button class="submit btn btn-primary" type="button" id="btnConnexion">Se Connecter</button>
+    <div class="mb-3">
+      <span id="btnMsg" class="btn btn-outline-danger d-none"></span>
+    </div>
+    <span class="span">Vous n'avez pas de compte ? 
+      <a href="{{ base_url('registerForm') }}">Sign up</a>
+    </span>
+  </form>
 </div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 {% endblock %}
 
 
 {% block javascripts %}
-<script src="Assets/js/connexion.js"></script>
+<script src="/Assets/js/connexion.js"></script>
 {% endblock %}

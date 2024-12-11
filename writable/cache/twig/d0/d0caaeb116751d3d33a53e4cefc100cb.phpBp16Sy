@@ -14,8 +14,8 @@ use Twig\Source;
 use Twig\Template;
 use Twig\TemplateWrapper;
 
-/* addItems.html.twig */
-class __TwigTemplate_3a5ca4fc24f8e42d1b3892fffb655321 extends Template
+/* AddItems.html.twig */
+class __TwigTemplate_d5c1ec10559a19275cd71e30562fe920 extends Template
 {
     private Source $source;
     /**
@@ -44,7 +44,7 @@ class __TwigTemplate_3a5ca4fc24f8e42d1b3892fffb655321 extends Template
     protected function doDisplay(array $context, array $blocks = []): iterable
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("base.html.twig", "addItems.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "AddItems.html.twig", 1);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
     }
 
@@ -200,7 +200,10 @@ class __TwigTemplate_3a5ca4fc24f8e42d1b3892fffb655321 extends Template
         yield "\" required>
             </div>
 
-           
+            <div>
+                <label for=\"image\">Image</label>
+                <input type=\"file\" name=\"image\" id=\"image\" accept=\"image/*\" required>
+            </div>
 
             <button type=\"submit\">Ajouter le produit</button>
         </form>
@@ -216,7 +219,7 @@ class __TwigTemplate_3a5ca4fc24f8e42d1b3892fffb655321 extends Template
      */
     public function getTemplateName(): string
     {
-        return "addItems.html.twig";
+        return "AddItems.html.twig";
     }
 
     /**
@@ -343,7 +346,10 @@ Ajouter ItemsForm
                 <input type=\"text\" name=\"typeMateriel\" id=\"typeMateriel\" value=\"{{ 'typeMateriel' }}\" required>
             </div>
 
-           
+            <div>
+                <label for=\"image\">Image</label>
+                <input type=\"file\" name=\"image\" id=\"image\" accept=\"image/*\" required>
+            </div>
 
             <button type=\"submit\">Ajouter le produit</button>
         </form>
@@ -351,6 +357,6 @@ Ajouter ItemsForm
 
 </body>
 {% endblock %}
-", "addItems.html.twig", "/home/vagrant/Site/app/Views/addItems.html.twig");
+", "AddItems.html.twig", "/home/vagrant/Site/app/Views/AddItems.html.twig");
     }
 }

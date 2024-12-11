@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Maps
+{% endblock %}
+
+{% block content %}
+ <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}"></script>
+    <script>
+        function initMap() {
+            const evryBounds = {
+                north: 48.6600,
+                south: 40.800,
+                east: 2.4700,
+                west: 2.4021
+            };
+
+            const evryCenter = { lat: 48.6388, lng: 2.4360 };
+
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 1,
+                center: evryCenter,
+                restriction: {
+                    latLngBounds: evryBounds,
+                    strictBounds: true
+                }
+            });
+
+            const marker = new google.maps.Marker({
+                position: evryCenter,
+                map: map,
+                title: "Évry"
+            });
+        }
+    </script>
+</head>
+<body onload="initMap()">
+    <h1>Carte d'Évry</h1>
+    <div id="map"></div>
+</body>
+{% endblock %}

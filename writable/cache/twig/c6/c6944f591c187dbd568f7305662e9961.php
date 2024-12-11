@@ -296,7 +296,7 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
         yield "\">Ajout d'un élément</a>
         <a href=\"";
         // line 230
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["path_maps"] ?? null), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("MapController"), "html", null, true);
         yield "\">Maps</a>
         <a href=\"";
         // line 231
@@ -313,8 +313,10 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
 
     <!-- Intégration de Chart.js -->
     <script src=\"https://cdn.jsdelivr.net/npm/chart.js\"></script>
+    <script src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyCpBFteXH4NlRlT0U8Ax1a497IS4a3C70U\"></script>
+
     
-    <<script>
+    <script>
 
 
     const sidebar = document.querySelector('.sidebar');
@@ -393,9 +395,9 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
 
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js\" integrity=\"sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></>
 ";
-        // line 359
-        yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
         // line 361
+        yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
+        // line 363
         yield "</body>
 </html>
 ";
@@ -476,7 +478,7 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
         yield from [];
     }
 
-    // line 359
+    // line 361
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -507,7 +509,7 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  480 => 359,  436 => 236,  429 => 235,  417 => 13,  406 => 5,  399 => 361,  397 => 359,  312 => 276,  310 => 235,  303 => 231,  299 => 230,  295 => 229,  291 => 228,  284 => 223,  278 => 221,  272 => 219,  270 => 218,  65 => 15,  63 => 13,  52 => 5,  46 => 1,);
+        return array (  482 => 361,  438 => 236,  431 => 235,  419 => 13,  408 => 5,  401 => 363,  399 => 361,  312 => 276,  310 => 235,  303 => 231,  299 => 230,  295 => 229,  291 => 228,  284 => 223,  278 => 221,  272 => 219,  270 => 218,  65 => 15,  63 => 13,  52 => 5,  46 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -741,7 +743,7 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
     <div class=\"sidebar\">
         <a href=\"{{base_url('/')}}\"> Accueil</a>
         <a href=\"{{ base_url('ItemsForm') }}\">Ajout d'un élément</a>
-        <a href=\"{{ path_maps }}\">Maps</a>
+        <a href=\"{{ base_url('MapController') }}\">Maps</a>
         <a href=\"{{ base_url('ItemsList')}}\">Consultation des éléments</a>
     </div>
 
@@ -791,8 +793,10 @@ class __TwigTemplate_61512e7d9803e0ce01c559c3c00de78b extends Template
 
     <!-- Intégration de Chart.js -->
     <script src=\"https://cdn.jsdelivr.net/npm/chart.js\"></script>
+    <script src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyCpBFteXH4NlRlT0U8Ax1a497IS4a3C70U\"></script>
+
     
-    <<script>
+    <script>
 
 
     const sidebar = document.querySelector('.sidebar');

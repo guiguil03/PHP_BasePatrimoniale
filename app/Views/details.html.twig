@@ -1,12 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block content %}
-
-<h1> Page de detail </h1>
-<p> Modification de l'etat du materiel</p>
-<p> description du materiel avec son emplacements etc... </p>
-<p> Les derniers changements effectue sur celui-ci </p>
-
-
+{% block title %}
+Détails de l'Item
 {% endblock %}
 
+{% block content %}
+<h1>{{ items.nom }}</h1>
+<p><strong>Description:</strong> {{ item.adescription }}</p>
+<p><strong>Localisation:</strong> {{ item.localisation }}</p>
+<p><strong>Type de matériel:</strong> {{ item.typeMateriel }}</p>
+<img src="{{ item.image_url }}" alt="{{ item.nom }}" width="200" height="200" />
+{% endblock %}

@@ -36,7 +36,7 @@ class Auth extends BaseController
         $db = \Config\Database::connect();
 
 // Use '?' as a placeholder and pass the parameters in an array
-        $check = "SELECT COUNT(*) AS count FROM blog WHERE adresseMail = ? ";
+        $check = "SELECT COUNT(*) AS count FROM Users WHERE adresseMail = ? ";
         $query_check = $db->query($check, [$adresseMail]);
         $result = $query_check->getRow(); // Fetch a single result row
 
@@ -54,7 +54,7 @@ class Auth extends BaseController
                 'error' => 'L adresse mail est deja utilisé'
             ]);
         }else{
-            $sql = "INSERT INTO blog (nom, adresseMail) VALUES (:nom:, :adresseMail:)";
+            $sql = "INSERT INTO Users (nom, adresseMail) VALUES (:nom:, :adresseMail:)";
             $db->query($sql, [
                 'nom' => $nom,
                 'adresseMail' => $adresseMail,
@@ -74,9 +74,9 @@ class Auth extends BaseController
 
     public function connexion() {
         $nom = $this->request->getVar("nom");
-        $adresseMail =$this->request->getVar("mail");
+        $adresseMail =$this->request->getVar("adresseMail");
         $db = \Config\Database::connect();
-        $builder= $db->table('blog');
+        $builder= $db->table('Users');
 
         if(empty($nom) || empty($adresseMail)){
             return redirect()->back()->with('error', 'Veuillez remplir tous les champs.');

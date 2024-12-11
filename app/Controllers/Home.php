@@ -11,8 +11,12 @@ class Home extends BaseController
     {
         return $this->twig->render("base.html");
     }
-    public function details() :string{
-        return $this->twig->render("details.html");
+    public function details()
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('Items');
+
+        return $this->twig->render('details.html');
     }
 
 }

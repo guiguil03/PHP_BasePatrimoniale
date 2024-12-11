@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class BlogModel extends Model
+class ItemsModel extends Model
 {
     protected $table            = 'Items';
     protected $primaryKey       = 'id_items';
@@ -13,6 +13,8 @@ class BlogModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = ['nom', 'adescription', 'localisation', 'typeMateriel', 'image_url'];
+
+    
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
