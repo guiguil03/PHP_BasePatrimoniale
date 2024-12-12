@@ -126,7 +126,7 @@ class __TwigTemplate_9ddd18692810129f53cadcd78ae84291 extends Template
 
 <form method=\"get\" action=\"";
         // line 63
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("/items/searchItems"), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("/home"), "html", null, true);
         yield "\">
     <input
         placeholder=\"Rechercher vos éléments\"
@@ -286,7 +286,7 @@ Liste des Items
 
 <h1>Liste des Produits</h1>
 
-<form method=\"get\" action=\"{{ base_url('/items/searchItems') }}\">
+<form method=\"get\" action=\"{{ base_url('/home') }}\">
     <input
         placeholder=\"Rechercher vos éléments\"
         class=\"input\"

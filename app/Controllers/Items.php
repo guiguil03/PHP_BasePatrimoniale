@@ -10,6 +10,28 @@ use \Kenjis\CI4Twig\Twig;
 class Items extends BaseController
 {
    
+
+    public function searchItems() :string {
+        $searchTerm = $this->request->getGet("text");  
+        $db = \Config\Database::connect(); 
+        
+        if (empty($searchTerm)) {
+            $query = $db->query("SELECT * FROM Items");
+        } else {
+            $query = $db->query("SELECT * FROM Items WHERE nom LIKE :searchTerm: OR adescription LIKE :searchTerm: OR localisation LIKE :searchTerm: OR typeMateriel LIKE :searchTerm:" , [
+                'searchTerm' => '%' . $searchTerm . '%'
+            ]);
+        }
+    
+        $data['items'] = $query->getResult();
+    
+        if (empty($data['items'])) {
+            log_message('error', 'Aucun produit trouvé pour la recherche: ' . $searchTerm);
+        }
+    
+        return $this->twig->render("listeItems.html", $data);
+    }
+    
     public function ItemsList() :string{
         $db = \Config\Database::connect(); 
         

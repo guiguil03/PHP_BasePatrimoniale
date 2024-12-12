@@ -60,14 +60,16 @@ Liste des Items
 
 <h1>Liste des Produits</h1>
 
-<form method="get" action="{{ base_url('/blog') }}">
-<input
-  placeholder="Rechercher vos elements"
-  class="input"
-  name="text"
-  type="text"
-/>    <button type="submit">Rechercher</button>
+<form method="get" action="{{ base_url('/items/searchItems') }}">
+    <input
+        placeholder="Rechercher vos éléments"
+        class="input"
+        name="text"
+        type="text"
+        value="{{ search | default('') }}" >
+    <button type="submit">Rechercher</button>
 </form>
+
 
   {% if items is not empty %}
         <div class="product-list">
