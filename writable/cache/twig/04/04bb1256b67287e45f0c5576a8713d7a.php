@@ -149,7 +149,10 @@ class __TwigTemplate_0198ee8bb87c436167db38f7cd1d3129 extends Template
 
 </style>
 <div class=\"divForm\">
-<form class=\"form\" method=\"POST\">
+<form class=\"form\" method=\"POST\" action=\"";
+        // line 87
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("/register"), "html", null, true);
+        yield "\">
  <span class=\"input-span\">
     <label for=\"nom\" class=\"label\">Nom </label>
     <input type=\"text\" name=\"nom\" id=\"nom\" required
@@ -158,7 +161,7 @@ class __TwigTemplate_0198ee8bb87c436167db38f7cd1d3129 extends Template
     <label for=\"adresseMail\" class=\"label\">Email</label>
     <input type=\"text\" name=\"adresseMail\" id=\"adresseMail\" required
   /></span>
-   <button class=\"submit\" type=\"button\" id=\"btnConnexion\" class=\"btn btn-primary\">Se Connecter</button>
+   <button class=\"submit\" type=\"submit\" id=\"btnConnexion\" class=\"btn btn-primary\">Se Connecter</button>
 
 </form>
 </div>
@@ -202,7 +205,7 @@ class __TwigTemplate_0198ee8bb87c436167db38f7cd1d3129 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  179 => 106,  172 => 105,  73 => 8,  66 => 7,  60 => 4,  53 => 3,  42 => 1,);
+        return array (  182 => 106,  175 => 105,  154 => 87,  73 => 8,  66 => 7,  60 => 4,  53 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -293,7 +296,7 @@ Se connecter
 
 </style>
 <div class=\"divForm\">
-<form class=\"form\" method=\"POST\">
+<form class=\"form\" method=\"POST\" action=\"{{ base_url('/register') }}\">
  <span class=\"input-span\">
     <label for=\"nom\" class=\"label\">Nom </label>
     <input type=\"text\" name=\"nom\" id=\"nom\" required
@@ -302,7 +305,7 @@ Se connecter
     <label for=\"adresseMail\" class=\"label\">Email</label>
     <input type=\"text\" name=\"adresseMail\" id=\"adresseMail\" required
   /></span>
-   <button class=\"submit\" type=\"button\" id=\"btnConnexion\" class=\"btn btn-primary\">Se Connecter</button>
+   <button class=\"submit\" type=\"submit\" id=\"btnConnexion\" class=\"btn btn-primary\">Se Connecter</button>
 
 </form>
 </div>

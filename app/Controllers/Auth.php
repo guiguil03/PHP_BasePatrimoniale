@@ -94,23 +94,17 @@ class Auth extends BaseController
             $data['connected'] = false;
         }
         return $this->response->setJSON($data);
-        // if($response){
-        //     return $this->twig->render("base.html", [
-        //         'good' => 'Vous etes bien connecté']);
-        // }else{
-        //     return redirect()->back()->with('error', 'Nom ou prénom incorrect.');
-        // 
+        if($response){
+             return $this->twig->render("base.html", [
+                 'good' => 'Vous etes bien connecté']);
+         }else{
+             return redirect()->back()->with('error', 'Nom ou prénom incorrect.');
+         }
 
 
 
     }
-    public function logout()
-    {
-        session()->destroy();
-
-        return redirect()->to('/connexion')->with('good', 'Vous vous êtes déconnecté.');
-    }
-
+  
     public function connected():string{
         return $this->twig-render("/");
     }

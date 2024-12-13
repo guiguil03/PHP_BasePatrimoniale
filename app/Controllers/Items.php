@@ -51,8 +51,8 @@ class Items extends BaseController
     public function Items() :string{
         $nom= $this->request->getPost("nom");
         $description= $this->request->getPost("decription");
-        $localisation= $this->request->getpost("localisation");
-        $type= $this->request->getpost("typeMateriel");
+        $localisation= $this->request->getPost("localisation");
+        $type= $this->request->getPost("typeMateriel");
         $db = \Config\Database::connect();
 
         if (empty($nom) || empty($description)) {
@@ -68,7 +68,9 @@ class Items extends BaseController
             'localisation' => $localisation,
             'typeMateriel' => $typeMateriel
         ]);
-        return $this->twig->render ("base.html");
+        return $this->twig-> render('base.html', [
+            'good' => 'l item à été crée'
+        ]);
     }
     
 }

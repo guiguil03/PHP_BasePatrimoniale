@@ -81,7 +81,7 @@ class __TwigTemplate_d5c1ec10559a19275cd71e30562fe920 extends Template
         }
 
         .container {
-            max-width: 600px;
+            max-width: 900px;
             margin: 50px auto;
             padding: 20px;
             background-color: #3c3c3c;
@@ -131,25 +131,84 @@ class __TwigTemplate_d5c1ec10559a19275cd71e30562fe920 extends Template
         .success {
             color: green;
         }
+       
+        .supp, .add{
+            background-color:#2e2e2e;
+            width:30%;
+            border: 1px solid #5c4b8b;
+            position:relative;
+            text-align:center;
+           
+        }
+        .class{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .container div {
+            margin: 10px;
+        }
+        input, select {
+            background-color:#2e2e2e;
+            border: 1px solid #5c4b8b;
+            color: white;
+        }
+        
     </style>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    let materielCount = 1; 
+
+    document.getElementById('add-materiel').addEventListener('click', function () {
+        materielCount++;
+        const materielList = document.getElementById('materiels-list');
+
+        const newMateriel = document.createElement('div');
+        newMateriel.className = 'materiel-item';
+        newMateriel.innerHTML = `
+            <label for=\"typeMateriel_\${materielCount}\">Matériel</label>
+            <select name=\"typeMateriel[]\" id=\"typeMateriel_\${materielCount}\" required>
+                <option value=\"\">-- Sélectionnez le type --</option>
+                <option value=\"ordinateur\">Ordinateur</option>
+                <option value=\"tablette\">Tablette</option>
+                <option value=\"imprimante\">Imprimante</option>
+                 <option value=\"extincteur\">Extincteur</option>
+                 <option value=\"extincteur\">VideoProjecteurs</option>
+                <option value=\"extincteur\">Copieurs</option>
+            </select>
+            <label for=\"quantite_\${materielCount}\">Quantité</label>
+            <input type=\"number\" name=\"quantite[]\" id=\"quantite_\${materielCount}\" min=\"1\" value=\"1\" required>
+            <button type=\"button\" class=\" supp remove-item\" onclick=\"removeMateriel(this)\">Supprimer</button>
+        `;
+
+        materielList.appendChild(newMateriel);
+    });
+
+    window.removeMateriel = function (button) {
+        const materielItem = button.parentElement;
+        materielItem.remove();
+    };
+});
+</script>
+
 </head>
 <body>
 
     <div class=\"container\">
-        <h1>Ajouter un Produit</h1>
+        <h1>Ajouter un élément</h1>
 
         <!-- Affichage des erreurs de validation -->
         ";
-        // line 78
+        // line 137
         if (($context["validation"] ?? null)) {
-            // line 79
+            // line 138
             yield "            <ul class=\"error\">
                 ";
-            // line 80
+            // line 139
             $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, ($context["validation"] ?? null), "getErrors", [], "method", false, false, false, 80));
+            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, ($context["validation"] ?? null), "getErrors", [], "method", false, false, false, 139));
             foreach ($context['_seq'] as $context["_key"] => $context["error"]) {
-                // line 81
+                // line 140
                 yield "                    <li>";
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["error"], "html", null, true);
                 yield "</li>
@@ -158,51 +217,114 @@ class __TwigTemplate_d5c1ec10559a19275cd71e30562fe920 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['error'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 83
+            // line 142
             yield "            </ul>
         ";
         }
-        // line 85
+        // line 144
         yield "
-        <form action=\"";
-        // line 86
+        <form class=\"form\" method=\"POST\" action=\"";
+        // line 145
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("/Items"), "html", null, true);
-        yield "\" method=\"post\" enctype=\"multipart/form-data\">
+        yield "\"  enctype=\"multipart/form-data\">
             <div>
-                <label for=\"nom\">Nom du produit</label>
+                <label for=\"nom\">Nom de la salle</label>
                 <input type=\"text\" name=\"nom\" id=\"nom\" value=\"";
-        // line 89
+        // line 148
         yield "nom";
         yield "\" required>
             </div>
 
             <div>
                 <label for=\"adescription\">Description</label>
-                <textarea name=\"adescription\" id=\"adescription\" rows=\"4\" required>";
-        // line 94
-        yield "adescription";
-        yield "</textarea>
+                <textarea name=\"adescription\" id=\"adescription\" rows=\"3\" required></textarea>
             </div>
 
             <div>
-                <label for=\"localisation\">Localisation</label>
-                <input type=\"text\" name=\"localisation\" id=\"localisation\" value=\"";
-        // line 99
-        yield "localisation";
+                <label for=\"campus\">Campus</label>
+                <input type=\"text\" name=\"campus\" id=\"campus\" value=\"";
+        // line 158
+        yield "campus";
         yield "\" required>
             </div>
 
+           <div class=\"loc\">
+        <label for=\"localisation\"> localisation </label>
+        <select name=\"localisation\" id=\"localisation\" required>
+            <option value=\"\">-- Sélectionnez un lieu --</option>
+            <option value=\"Batiments Maupertuis\" >Batiments Maupertuis</option>
+            <option value=\"Premier Cycle\" >Premier Cycle</option>
+            <option value=\"IDF\" >IDF</option>
+        </select>
+        </div>
+
+
+        <div class=\"materiel-container\">
+    <div id=\"materiels-list\">
+        <div class=\"materiel-item\">
+            <label for=\"typeMateriel_1\">Matériel</label>
+            <select name=\"typeMateriel[]\" id=\"typeMateriel_1\" required>
+                <option value=\"\">-- Sélectionnez le type --</option>
+                <option value=\"ordinateur\">Ordinateur</option>
+                <option value=\"tablette\">Tablette</option>
+                <option value=\"imprimante\">Imprimante</option>
+                <option value=\"extincteur\">Extincteur</option>
+                <option value=\"extincteur\">VideoProjecteurs</option>
+
+                <option value=\"extincteur\">Copieurs</option>
+
+            </select>
+            <label for=\"quantite_1\">Quantité</label>
+            <input type=\"number\" name=\"quantite[]\" id=\"quantite_1\" min=\"1\" value=\"1\" required>
+            <div class=\"class\">
+            <button type=\"button\" class=\"supp remove-item\" onclick=\"removeMateriel(this)\">Supprimer</button>
+            <button type=\"button\" class=\"add\" id=\"add-materiel\">Ajouter un matériel</button>
+        </div>
+    </div>
+    
+    </div>
+</div>
+
             <div>
-                <label for=\"typeMateriel\">Type de matériel</label>
-                <input type=\"text\" name=\"typeMateriel\" id=\"typeMateriel\" value=\"";
-        // line 104
-        yield "typeMateriel";
+                <label for=\"Capacité\">Capacité</label>
+                <input type=\"number\" name=\"Capacité\" id=\"Capacité\" value=\"";
+        // line 200
+        yield "Capacité";
         yield "\" required>
             </div>
+            <div>
+                <label for=\"NombreTables\">Nombre de Tables</label>
+                <input type=\"number\" name=\"NombreTables\" id=\"NombreTables\" value=\"";
+        // line 204
+        yield "NombreTables";
+        yield "\" required>
+            </div>
+             <div>
+                <label for=\"NombreEtudiants\">Nombre d'étudiants</label>
+                <input type=\"number\" name=\"NombreEtudiants\" id=\"NombreEtudiants\" value=\"";
+        // line 208
+        yield "NombreEtudiants";
+        yield "\" required>
+            </div>
+             <div>
+                <label for=\"NombreEnseignants\">Nombre d'enseognants</label>
+                <input type=\"number\" name=\"NombreEnseignants\" id=\"NombreEnseignants\" value=\"";
+        // line 212
+        yield "NombreEnseignants";
+        yield "\" required>
+            </div>
+            <div>
+                <label for=\"NormeHandicap\">Norme Handicap</label>
+                <input type=\"checkbox\" name=\"NormeHandicap\" id=\"NormeHandicap\" value=\"";
+        // line 216
+        yield "NormeHandicap";
+        yield "\">
+            </div>
+            
 
            
 
-            <button type=\"submit\">Ajouter le produit</button>
+            <button type=\"submit\">Ajouter l'élément</button>
         </form>
     </div>
 
@@ -232,7 +354,7 @@ class __TwigTemplate_d5c1ec10559a19275cd71e30562fe920 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  199 => 104,  191 => 99,  183 => 94,  175 => 89,  169 => 86,  166 => 85,  162 => 83,  153 => 81,  149 => 80,  146 => 79,  144 => 78,  73 => 9,  66 => 8,  59 => 4,  52 => 3,  41 => 1,);
+        return array (  320 => 216,  313 => 212,  306 => 208,  299 => 204,  292 => 200,  247 => 158,  234 => 148,  228 => 145,  225 => 144,  221 => 142,  212 => 140,  208 => 139,  205 => 138,  203 => 137,  73 => 9,  66 => 8,  59 => 4,  52 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -256,7 +378,7 @@ Ajouter ItemsForm
         }
 
         .container {
-            max-width: 600px;
+            max-width: 900px;
             margin: 50px auto;
             padding: 20px;
             background-color: #3c3c3c;
@@ -306,12 +428,71 @@ Ajouter ItemsForm
         .success {
             color: green;
         }
+       
+        .supp, .add{
+            background-color:#2e2e2e;
+            width:30%;
+            border: 1px solid #5c4b8b;
+            position:relative;
+            text-align:center;
+           
+        }
+        .class{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .container div {
+            margin: 10px;
+        }
+        input, select {
+            background-color:#2e2e2e;
+            border: 1px solid #5c4b8b;
+            color: white;
+        }
+        
     </style>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    let materielCount = 1; 
+
+    document.getElementById('add-materiel').addEventListener('click', function () {
+        materielCount++;
+        const materielList = document.getElementById('materiels-list');
+
+        const newMateriel = document.createElement('div');
+        newMateriel.className = 'materiel-item';
+        newMateriel.innerHTML = `
+            <label for=\"typeMateriel_\${materielCount}\">Matériel</label>
+            <select name=\"typeMateriel[]\" id=\"typeMateriel_\${materielCount}\" required>
+                <option value=\"\">-- Sélectionnez le type --</option>
+                <option value=\"ordinateur\">Ordinateur</option>
+                <option value=\"tablette\">Tablette</option>
+                <option value=\"imprimante\">Imprimante</option>
+                 <option value=\"extincteur\">Extincteur</option>
+                 <option value=\"extincteur\">VideoProjecteurs</option>
+                <option value=\"extincteur\">Copieurs</option>
+            </select>
+            <label for=\"quantite_\${materielCount}\">Quantité</label>
+            <input type=\"number\" name=\"quantite[]\" id=\"quantite_\${materielCount}\" min=\"1\" value=\"1\" required>
+            <button type=\"button\" class=\" supp remove-item\" onclick=\"removeMateriel(this)\">Supprimer</button>
+        `;
+
+        materielList.appendChild(newMateriel);
+    });
+
+    window.removeMateriel = function (button) {
+        const materielItem = button.parentElement;
+        materielItem.remove();
+    };
+});
+</script>
+
 </head>
 <body>
 
     <div class=\"container\">
-        <h1>Ajouter un Produit</h1>
+        <h1>Ajouter un élément</h1>
 
         <!-- Affichage des erreurs de validation -->
         {% if validation %}
@@ -322,30 +503,84 @@ Ajouter ItemsForm
             </ul>
         {% endif %}
 
-        <form action=\"{{ base_url('/Items') }}\" method=\"post\" enctype=\"multipart/form-data\">
+        <form class=\"form\" method=\"POST\" action=\"{{ base_url('/Items') }}\"  enctype=\"multipart/form-data\">
             <div>
-                <label for=\"nom\">Nom du produit</label>
+                <label for=\"nom\">Nom de la salle</label>
                 <input type=\"text\" name=\"nom\" id=\"nom\" value=\"{{ 'nom'}}\" required>
             </div>
 
             <div>
                 <label for=\"adescription\">Description</label>
-                <textarea name=\"adescription\" id=\"adescription\" rows=\"4\" required>{{ 'adescription' }}</textarea>
+                <textarea name=\"adescription\" id=\"adescription\" rows=\"3\" required></textarea>
             </div>
 
             <div>
-                <label for=\"localisation\">Localisation</label>
-                <input type=\"text\" name=\"localisation\" id=\"localisation\" value=\"{{ 'localisation' }}\" required>
+                <label for=\"campus\">Campus</label>
+                <input type=\"text\" name=\"campus\" id=\"campus\" value=\"{{ 'campus'}}\" required>
             </div>
 
+           <div class=\"loc\">
+        <label for=\"localisation\"> localisation </label>
+        <select name=\"localisation\" id=\"localisation\" required>
+            <option value=\"\">-- Sélectionnez un lieu --</option>
+            <option value=\"Batiments Maupertuis\" >Batiments Maupertuis</option>
+            <option value=\"Premier Cycle\" >Premier Cycle</option>
+            <option value=\"IDF\" >IDF</option>
+        </select>
+        </div>
+
+
+        <div class=\"materiel-container\">
+    <div id=\"materiels-list\">
+        <div class=\"materiel-item\">
+            <label for=\"typeMateriel_1\">Matériel</label>
+            <select name=\"typeMateriel[]\" id=\"typeMateriel_1\" required>
+                <option value=\"\">-- Sélectionnez le type --</option>
+                <option value=\"ordinateur\">Ordinateur</option>
+                <option value=\"tablette\">Tablette</option>
+                <option value=\"imprimante\">Imprimante</option>
+                <option value=\"extincteur\">Extincteur</option>
+                <option value=\"extincteur\">VideoProjecteurs</option>
+
+                <option value=\"extincteur\">Copieurs</option>
+
+            </select>
+            <label for=\"quantite_1\">Quantité</label>
+            <input type=\"number\" name=\"quantite[]\" id=\"quantite_1\" min=\"1\" value=\"1\" required>
+            <div class=\"class\">
+            <button type=\"button\" class=\"supp remove-item\" onclick=\"removeMateriel(this)\">Supprimer</button>
+            <button type=\"button\" class=\"add\" id=\"add-materiel\">Ajouter un matériel</button>
+        </div>
+    </div>
+    
+    </div>
+</div>
+
             <div>
-                <label for=\"typeMateriel\">Type de matériel</label>
-                <input type=\"text\" name=\"typeMateriel\" id=\"typeMateriel\" value=\"{{ 'typeMateriel' }}\" required>
+                <label for=\"Capacité\">Capacité</label>
+                <input type=\"number\" name=\"Capacité\" id=\"Capacité\" value=\"{{ 'Capacité' }}\" required>
             </div>
+            <div>
+                <label for=\"NombreTables\">Nombre de Tables</label>
+                <input type=\"number\" name=\"NombreTables\" id=\"NombreTables\" value=\"{{ 'NombreTables' }}\" required>
+            </div>
+             <div>
+                <label for=\"NombreEtudiants\">Nombre d'étudiants</label>
+                <input type=\"number\" name=\"NombreEtudiants\" id=\"NombreEtudiants\" value=\"{{ 'NombreEtudiants' }}\" required>
+            </div>
+             <div>
+                <label for=\"NombreEnseignants\">Nombre d'enseognants</label>
+                <input type=\"number\" name=\"NombreEnseignants\" id=\"NombreEnseignants\" value=\"{{ 'NombreEnseignants' }}\" required>
+            </div>
+            <div>
+                <label for=\"NormeHandicap\">Norme Handicap</label>
+                <input type=\"checkbox\" name=\"NormeHandicap\" id=\"NormeHandicap\" value=\"{{ 'NormeHandicap' }}\">
+            </div>
+            
 
            
 
-            <button type=\"submit\">Ajouter le produit</button>
+            <button type=\"submit\">Ajouter l'élément</button>
         </form>
     </div>
 

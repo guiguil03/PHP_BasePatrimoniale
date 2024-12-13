@@ -82,19 +82,21 @@ class __TwigTemplate_a89ffe6055102504808d8f00f9e84b7e extends Template
     <script>
         function initMap() {
             const evryBounds = {
-                north: 48.6600,
-                south: 40.800,
+                north: 49.600,
+                south: 40.500,
                 east: 2.4700,
                 west: 2.4021
             };
 
-            const evryCenter = { lat: 48.6388, lng: 2.4360 };
+            const evryCenter = { lat: 48.629828, lng:2.401782 };
 
             const map = new google.maps.Map(document.getElementById(\"map\"), {
-                zoom: 1,
+                zoom: 6,
                 center: evryCenter,
+               
                 restriction: {
                     latLngBounds: evryBounds,
+                     
                     strictBounds: true
                 }
             });
@@ -158,19 +160,21 @@ Maps
     <script>
         function initMap() {
             const evryBounds = {
-                north: 48.6600,
-                south: 40.800,
+                north: 49.600,
+                south: 40.500,
                 east: 2.4700,
                 west: 2.4021
             };
 
-            const evryCenter = { lat: 48.6388, lng: 2.4360 };
+            const evryCenter = { lat: 48.629828, lng:2.401782 };
 
             const map = new google.maps.Map(document.getElementById(\"map\"), {
-                zoom: 1,
+                zoom: 6,
                 center: evryCenter,
+               
                 restriction: {
                     latLngBounds: evryBounds,
+                     
                     strictBounds: true
                 }
             });

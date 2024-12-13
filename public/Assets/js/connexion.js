@@ -5,8 +5,8 @@ $(function() {
         let mail = $('#adresseMail').val();
 
         $.ajax({
-            url: 'Connexion',  
-            method: "GET",
+            url: 'connexion',  
+            method: "POST",
             data: {
                 'nom': nom,
                 'mail': mail
