@@ -84,7 +84,7 @@ class __TwigTemplate_a89ffe6055102504808d8f00f9e84b7e extends Template
             const evryBounds = {
                 north: 49.600,
                 south: 40.500,
-                east: 2.5500,
+                east: 2.5700,
                 west: 2.4021
             };
 
@@ -161,7 +161,7 @@ Maps
             const evryBounds = {
                 north: 49.600,
                 south: 40.500,
-                east: 2.5500,
+                east: 2.5700,
                 west: 2.4021
             };
 
