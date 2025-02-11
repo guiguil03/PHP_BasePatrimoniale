@@ -74,7 +74,6 @@ class __TwigTemplate_3a5ca4fc24f8e42d1b3892fffb655321 extends Template
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #2e2e2e;
             color: #fff;
             margin: 0;
             padding: 0;
@@ -84,14 +83,15 @@ class __TwigTemplate_3a5ca4fc24f8e42d1b3892fffb655321 extends Template
             max-width: 900px;
             margin: 50px auto;
             padding: 20px;
-            background-color: #3c3c3c;
+            background-color:rgb(255, 255, 255);
+            color: black;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         h1 {
             text-align: center;
-            color: white;
+            color:  #5c4b8b;
         }
 
         label {
@@ -105,8 +105,8 @@ class __TwigTemplate_3a5ca4fc24f8e42d1b3892fffb655321 extends Template
             margin: 10px 0 20px;
             border: 1px solid #5c4b8b;
             border-radius: 4px;
-            background-color: #2e2e2e;
-            color: #fff;
+            background-color: white;
+            color: black;
         }
 
         button {
@@ -123,6 +123,7 @@ class __TwigTemplate_3a5ca4fc24f8e42d1b3892fffb655321 extends Template
         button:hover {
             background-color: #7e39a0;
         }
+     
 
         .error {
             color: red;
@@ -133,7 +134,8 @@ class __TwigTemplate_3a5ca4fc24f8e42d1b3892fffb655321 extends Template
         }
        
         .supp, .add{
-            background-color:#2e2e2e;
+            background-color:white;
+            color: black;
             width:30%;
             border: 1px solid #5c4b8b;
             position:relative;
@@ -149,9 +151,10 @@ class __TwigTemplate_3a5ca4fc24f8e42d1b3892fffb655321 extends Template
             margin: 10px;
         }
         input, select {
-            background-color:#2e2e2e;
+            background-color:white;
+            color: black;
             border: 1px solid #5c4b8b;
-            color: white;
+            
         }
         
     </style>
@@ -198,16 +201,16 @@ document.addEventListener('DOMContentLoaded', () => {
         <h1>Ajouter un élément</h1>
 
         ";
-        // line 136
+        // line 139
         if (($context["validation"] ?? null)) {
-            // line 137
+            // line 140
             yield "            <ul class=\"error\">
                 ";
-            // line 138
+            // line 141
             $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, ($context["validation"] ?? null), "getErrors", [], "method", false, false, false, 138));
+            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, ($context["validation"] ?? null), "getErrors", [], "method", false, false, false, 141));
             foreach ($context['_seq'] as $context["_key"] => $context["error"]) {
-                // line 139
+                // line 142
                 yield "                    <li>";
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["error"], "html", null, true);
                 yield "</li>
@@ -216,20 +219,20 @@ document.addEventListener('DOMContentLoaded', () => {
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['error'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 141
+            // line 144
             yield "            </ul>
         ";
         }
-        // line 143
+        // line 146
         yield "
         <form class=\"form\" method=\"POST\" action=\"";
-        // line 144
+        // line 147
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("/Items"), "html", null, true);
         yield "\"  enctype=\"multipart/form-data\">
             <div>
                 <label for=\"nom\">Nom de la salle</label>
                 <input type=\"text\" name=\"nom\" id=\"nom\" value=\"";
-        // line 147
+        // line 150
         yield "nom";
         yield "\" required>
             </div>
@@ -242,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div>
                 <label for=\"campus\">Campus</label>
                 <input type=\"text\" name=\"campus\" id=\"campus\" value=\"";
-        // line 157
+        // line 160
         yield "campus";
         yield "\" required>
             </div>
@@ -285,35 +288,35 @@ document.addEventListener('DOMContentLoaded', () => {
             <div>
                 <label for=\"Capacité\">Capacité</label>
                 <input type=\"number\" name=\"Capacité\" id=\"Capacité\" min=\"0\" value=\"";
-        // line 197
+        // line 200
         yield "Capacité";
         yield "\" required>
             </div>
             <div>
                 <label for=\"NombreTables\">Nombre de Tables</label>
                 <input type=\"number\" name=\"NombreTables\" id=\"NombreTables\" min=\"0\" value=\"";
-        // line 201
+        // line 204
         yield "NombreTables";
         yield "\" required>
             </div>
              <div>
                 <label for=\"NombreEtudiants\">Nombre d'étudiants</label>
                 <input type=\"number\" name=\"NombreEtudiants\" id=\"NombreEtudiants\" min=\"0\"value=\"";
-        // line 205
+        // line 208
         yield "NombreEtudiants";
         yield "\" required>
             </div>
              <div>
                 <label for=\"NombreEnseignants\">Nombre d'enseignants</label>
                 <input type=\"number\" name=\"NombreEnseignants\" id=\"NombreEnseignants\"min=\"0\" value=\"";
-        // line 209
+        // line 212
         yield "NombreEnseignants";
         yield "\" required>
             </div>
              <div>
                 <label for=\"campus\">Image</label>
                 <input type=\"text\" name=\"image_url\" id=\"image_url\" value=\"";
-        // line 213
+        // line 216
         yield "image_url";
         yield "\" required>
             </div>
@@ -353,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     public function getDebugInfo(): array
     {
-        return array (  317 => 213,  310 => 209,  303 => 205,  296 => 201,  289 => 197,  246 => 157,  233 => 147,  227 => 144,  224 => 143,  220 => 141,  211 => 139,  207 => 138,  204 => 137,  202 => 136,  73 => 9,  66 => 8,  59 => 4,  52 => 3,  41 => 1,);
+        return array (  320 => 216,  313 => 212,  306 => 208,  299 => 204,  292 => 200,  249 => 160,  236 => 150,  230 => 147,  227 => 146,  223 => 144,  214 => 142,  210 => 141,  207 => 140,  205 => 139,  73 => 9,  66 => 8,  59 => 4,  52 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -370,7 +373,6 @@ Ajouter ItemsForm
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #2e2e2e;
             color: #fff;
             margin: 0;
             padding: 0;
@@ -380,14 +382,15 @@ Ajouter ItemsForm
             max-width: 900px;
             margin: 50px auto;
             padding: 20px;
-            background-color: #3c3c3c;
+            background-color:rgb(255, 255, 255);
+            color: black;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         h1 {
             text-align: center;
-            color: white;
+            color:  #5c4b8b;
         }
 
         label {
@@ -401,8 +404,8 @@ Ajouter ItemsForm
             margin: 10px 0 20px;
             border: 1px solid #5c4b8b;
             border-radius: 4px;
-            background-color: #2e2e2e;
-            color: #fff;
+            background-color: white;
+            color: black;
         }
 
         button {
@@ -419,6 +422,7 @@ Ajouter ItemsForm
         button:hover {
             background-color: #7e39a0;
         }
+     
 
         .error {
             color: red;
@@ -429,7 +433,8 @@ Ajouter ItemsForm
         }
        
         .supp, .add{
-            background-color:#2e2e2e;
+            background-color:white;
+            color: black;
             width:30%;
             border: 1px solid #5c4b8b;
             position:relative;
@@ -445,9 +450,10 @@ Ajouter ItemsForm
             margin: 10px;
         }
         input, select {
-            background-color:#2e2e2e;
+            background-color:white;
+            color: black;
             border: 1px solid #5c4b8b;
-            color: white;
+            
         }
         
     </style>
