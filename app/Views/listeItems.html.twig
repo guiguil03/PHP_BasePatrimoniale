@@ -58,16 +58,18 @@ Liste des Items
 }
 </style>
 
-<h1>Liste des Produits</h1>
+<h1>Liste des élements</h1>
 
-<form method="get" action="{{ base_url('/blog') }}">
-<input
-  placeholder="Rechercher vos elements"
-  class="input"
-  name="text"
-  type="text"
-/>    <button type="submit">Rechercher</button>
+<form method="get" action="{{ base_url('/items/searchItems') }}">
+    <input
+        placeholder="Rechercher vos éléments"
+        class="input"
+        name="text"
+        type="text"
+        value="{{ search | default('') }}" >
+    <button type="submit">Rechercher</button>
 </form>
+
 
   {% if items is not empty %}
         <div class="product-list">
@@ -79,9 +81,9 @@ Liste des Items
                     <div class="product-details">
                         <p><strong>Description:</strong> {{ items.adescription }}</p>
                         <p><strong>Localisation:</strong> {{ items.localisation }}</p>
-                        <p><strong>Type de matériel:</strong> {{ items.typeMateriel }}</p>
+                        <p><strong>Type de matériel:</strong> {{ items.typeMateriel }}</p> 
                         <img src={{items.image_url}} widht="100" height="100"/>
-                        <a href="{{ base_url('details') }}" class="input">More Details</a>
+                        <a href="{{ base_url('details/' ~ items.id) }}" class="input">More Details</a>
                     </div>
                 </div>
             {% endfor %}

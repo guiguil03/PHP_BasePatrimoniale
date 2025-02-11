@@ -151,7 +151,7 @@ class __TwigTemplate_0198ee8bb87c436167db38f7cd1d3129 extends Template
 <div class=\"divForm\">
 <form class=\"form\" method=\"POST\" action=\"";
         // line 87
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("connexion"), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("/register"), "html", null, true);
         yield "\">
  <span class=\"input-span\">
     <label for=\"nom\" class=\"label\">Nom </label>
@@ -161,24 +161,27 @@ class __TwigTemplate_0198ee8bb87c436167db38f7cd1d3129 extends Template
     <label for=\"adresseMail\" class=\"label\">Email</label>
     <input type=\"text\" name=\"adresseMail\" id=\"adresseMail\" required
   /></span>
-   <button class=\"submit\" type=\"button\" id=\"btnConnexion\" class=\"btn btn-primary\">Se Connecter</button>
+   <button class=\"submit\" type=\"submit\" id=\"btnConnexion\" class=\"btn btn-primary\">Se Connecter</button>
 
 </form>
 </div>
-<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js\" integrity=\"sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
+<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js\" integrity=\"sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\">
+
+</script>
+
 
 ";
         yield from [];
     }
 
-    // line 105
+    // line 108
     /**
      * @return iterable<null|scalar|\Stringable>
      */
     public function block_javascripts(array $context, array $blocks = []): iterable
     {
         $macros = $this->macros;
-        // line 106
+        // line 109
         yield "<script src=\"Assets/js/connexion.js\"></script>
 ";
         yield from [];
@@ -205,7 +208,7 @@ class __TwigTemplate_0198ee8bb87c436167db38f7cd1d3129 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  182 => 106,  175 => 105,  154 => 87,  73 => 8,  66 => 7,  60 => 4,  53 => 3,  42 => 1,);
+        return array (  185 => 109,  178 => 108,  154 => 87,  73 => 8,  66 => 7,  60 => 4,  53 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -296,7 +299,7 @@ Se connecter
 
 </style>
 <div class=\"divForm\">
-<form class=\"form\" method=\"POST\" action=\"{{ base_url('connexion') }}\">
+<form class=\"form\" method=\"POST\" action=\"{{ base_url('/register') }}\">
  <span class=\"input-span\">
     <label for=\"nom\" class=\"label\">Nom </label>
     <input type=\"text\" name=\"nom\" id=\"nom\" required
@@ -305,18 +308,20 @@ Se connecter
     <label for=\"adresseMail\" class=\"label\">Email</label>
     <input type=\"text\" name=\"adresseMail\" id=\"adresseMail\" required
   /></span>
-   <button class=\"submit\" type=\"button\" id=\"btnConnexion\" class=\"btn btn-primary\">Se Connecter</button>
+   <button class=\"submit\" type=\"submit\" id=\"btnConnexion\" class=\"btn btn-primary\">Se Connecter</button>
 
 </form>
 </div>
-<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js\" integrity=\"sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
+<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js\" integrity=\"sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\">
+
+</script>
+
 
 {% endblock %}
 
 
 {% block javascripts %}
 <script src=\"Assets/js/connexion.js\"></script>
-{% endblock %}
-", "register.html.twig", "/home/vagrant/Site/app/Views/register.html.twig");
+{% endblock %}", "register.html.twig", "/home/vagrant/Site/app/Views/register.html.twig");
     }
 }

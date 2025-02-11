@@ -51,6 +51,8 @@ abstract class BaseController extends Controller
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
         $this->twig = new \Kenjis\CI4Twig\Twig();
+        $config['google_maps_api_key'] = 'AIzaSyCpBFteXH4NlRlT0U8Ax1a497IS4a3C70U';
+
 
         // Preload any models, libraries, etc, here.
 

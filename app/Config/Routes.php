@@ -13,5 +13,8 @@ $routes->post('register','Auth::Register');
 $routes->get('ItemsList', 'Items::ItemsList');
 $routes->get('ItemsForm', 'Items::ItemsForm');
 $routes->post('Items', 'Items::Items');
-$routes->get('details', 'Home::details');
-
+$routes->get('details/(:num)', 'Items::details/$1');
+$routes->get("/MapController", 'MapController::index');
+$routes->get('/items/searchItems', 'Items::searchItems');
+$routes->get('/items/searchItems', 'Items::searchItems');
+$routes->get('/items/searchItems', 'Items::searchItems');

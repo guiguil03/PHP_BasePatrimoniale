@@ -11,8 +11,6 @@ class Home extends BaseController
     {
         return $this->twig->render("base.html");
     }
-    public function details() :string{
-        return $this->twig->render("details.html");
-    }
+    
 
 }

@@ -20,7 +20,7 @@ class User extends Seeder
                 'adresseMail' => $email
             ];
 
-            $this->db->table('Users')->insert($data);
+            $this->db->table('users')->insert($data);
         }
     } 
 }

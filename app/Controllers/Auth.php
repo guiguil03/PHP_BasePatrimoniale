@@ -22,9 +22,18 @@ class Auth extends BaseController
     {
         // Vérifiez que la session est bien démarrée
         if (!session()->has('nom')) {
-            session()->set('nom', '');  // Vous pouvez définir une valeur par défaut ici
+            session()->set('nom', '');  // Définir une valeur par défaut pour 'nom'
         }
+    
+        // Charger le service Twig
+    
+        // Ajouter la variable globale 'user_name' dans Twig
     }
+    public function renderTwig(string $template, array $data = []): string
+    {
+        return $this->twig->render($template, $data);
+    }
+    
 
     public function RegisterForm():string{
         return $this->twig-> render('register.html');
@@ -36,7 +45,7 @@ class Auth extends BaseController
         $db = \Config\Database::connect();
 
 // Use '?' as a placeholder and pass the parameters in an array
-        $check = "SELECT COUNT(*) AS count FROM blog WHERE adresseMail = ? ";
+        $check = "SELECT COUNT(*) AS count FROM Users WHERE adresseMail = ? ";
         $query_check = $db->query($check, [$adresseMail]);
         $result = $query_check->getRow(); // Fetch a single result row
 
@@ -54,7 +63,7 @@ class Auth extends BaseController
                 'error' => 'L adresse mail est deja utilisé'
             ]);
         }else{
-            $sql = "INSERT INTO blog (nom, adresseMail) VALUES (:nom:, :adresseMail:)";
+            $sql = "INSERT INTO Users (nom, adresseMail) VALUES (:nom:, :adresseMail:)";
             $db->query($sql, [
                 'nom' => $nom,
                 'adresseMail' => $adresseMail,
@@ -74,12 +83,15 @@ class Auth extends BaseController
 
     public function connexion() {
         $nom = $this->request->getVar("nom");
-        $adresseMail =$this->request->getVar("mail");
+        $adresseMail =$this->request->getVar("adresseMail");
         $db = \Config\Database::connect();
-        $builder= $db->table('blog');
+        $builder= $db->table('Users');
 
-        if(empty($nom) || empty($adresseMail)){
-            return redirect()->back()->with('error', 'Veuillez remplir tous les champs.');
+        if (empty($nom) || empty($adresseMail)) {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'Veuillez remplir tous les champs.',
+            ]);
         }
 
         $query = $builder-> getWhere(['nom'=> $nom, 'adresseMail'=> $adresseMail]);
@@ -90,27 +102,17 @@ class Auth extends BaseController
             // Lors de la connexion, enregistrez le nom dans la session
             session()->set('nom', $response->nom);
             $data['connected'] = true;
+            return $this->twig->render("base.html", [
+                'good' => 'Vous etes bien connecté']);
         } else {
             $data['connected'] = false;
         }
         return $this->response->setJSON($data);
-        // if($response){
-        //     return $this->twig->render("base.html", [
-        //         'good' => 'Vous etes bien connecté']);
-        // }else{
-        //     return redirect()->back()->with('error', 'Nom ou prénom incorrect.');
-        // 
-
+       
 
 
     }
-    public function logout()
-    {
-        session()->destroy();
-
-        return redirect()->to('/connexion')->with('good', 'Vous vous êtes déconnecté.');
-    }
-
+  
     public function connected():string{
         return $this->twig-render("/");
     }

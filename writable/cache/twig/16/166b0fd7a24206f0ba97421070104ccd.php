@@ -122,58 +122,80 @@ class __TwigTemplate_9ddd18692810129f53cadcd78ae84291 extends Template
 }
 </style>
 
-<h1>Liste des Produits</h1>
+<h1>Liste des élements</h1>
 
 <form method=\"get\" action=\"";
         // line 63
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("/blog"), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("/items/searchItems"), "html", null, true);
         yield "\">
-<input
-  placeholder=\"Rechercher vos elements\"
-  class=\"input\"
-  name=\"text\"
-  type=\"text\"
-/>    <button type=\"submit\">Rechercher</button>
+    <input
+        placeholder=\"Rechercher vos éléments\"
+        class=\"input\"
+        name=\"text\"
+        type=\"text\"
+        value=\"";
+        // line 69
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((array_key_exists("search", $context)) ? (Twig\Extension\CoreExtension::default(($context["search"] ?? null), "")) : ("")), "html", null, true);
+        yield "\" >
+    <button type=\"submit\">Rechercher</button>
 </form>
 
+
   ";
-        // line 72
+        // line 74
         if ( !Twig\Extension\CoreExtension::testEmpty(($context["items"] ?? null))) {
-            // line 73
+            // line 75
             yield "        <div class=\"product-list\">
             ";
-            // line 74
+            // line 76
             $context['_parent'] = $context;
             $context['_seq'] = CoreExtension::ensureTraversable($context["items"]);
             foreach ($context['_seq'] as $context["_key"] => $context["items"]) {
-                // line 75
+                // line 77
                 yield "                <div class=\"product-item\">
                     <div class=\"product-header\">
                         <h2>";
-                // line 77
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "nom", [], "any", false, false, false, 77), "html", null, true);
+                // line 79
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "nom", [], "any", false, false, false, 79), "html", null, true);
                 yield "</h2>
                     </div>
                     <div class=\"product-details\">
                         <p><strong>Description:</strong> ";
-                // line 80
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "adescription", [], "any", false, false, false, 80), "html", null, true);
+                // line 82
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "adescription", [], "any", false, false, false, 82), "html", null, true);
                 yield "</p>
                         <p><strong>Localisation:</strong> ";
-                // line 81
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "localisation", [], "any", false, false, false, 81), "html", null, true);
+                // line 83
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "localisation", [], "any", false, false, false, 83), "html", null, true);
                 yield "</p>
                         <p><strong>Type de matériel:</strong> ";
-                // line 82
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "typeMateriel", [], "any", false, false, false, 82), "html", null, true);
+                // line 84
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "typeMateriel", [], "any", false, false, false, 84), "html", null, true);
+                yield "</p>
+                        <p><strong>Capacité:</strong> ";
+                // line 85
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "capacité", [], "any", false, false, false, 85), "html", null, true);
+                yield "</p>
+                        <p><strong>Nombre Tables</strong> ";
+                // line 86
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "NbTables", [], "any", false, false, false, 86), "html", null, true);
+                yield "</p>
+
+                        <p><strong>Nombre Etudiant</strong> ";
+                // line 88
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "NbEtudiants", [], "any", false, false, false, 88), "html", null, true);
+                yield "</p>
+                        <p><strong>Nombre Enseignants</strong> ";
+                // line 89
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "NbEnseignants", [], "any", false, false, false, 89), "html", null, true);
                 yield "</p>
                         <img src=";
-                // line 83
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "image_url", [], "any", false, false, false, 83), "html", null, true);
+                // line 90
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["items"], "image_url", [], "any", false, false, false, 90), "html", null, true);
                 yield " widht=\"100\" height=\"100\"/>
                         <a href=\"";
-                // line 84
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("details"), "html", null, true);
+                // line 91
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url(("details/" . CoreExtension::getAttribute($this->env, $this->source, $context["items"], "id", [], "any", false, false, false, 91))), "html", null, true);
                 yield "\" class=\"input\">More Details</a>
                     </div>
                 </div>
@@ -182,11 +204,11 @@ class __TwigTemplate_9ddd18692810129f53cadcd78ae84291 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['items'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 88
+            // line 95
             yield "        </div>
     ";
         } else {
-            // line 90
+            // line 97
             yield "        <p>Aucun produit trouvé.</p>
     ";
         }
@@ -214,7 +236,7 @@ class __TwigTemplate_9ddd18692810129f53cadcd78ae84291 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  190 => 90,  186 => 88,  176 => 84,  172 => 83,  168 => 82,  164 => 81,  160 => 80,  154 => 77,  150 => 75,  146 => 74,  143 => 73,  141 => 72,  129 => 63,  72 => 8,  65 => 7,  59 => 4,  52 => 3,  41 => 1,);
+        return array (  212 => 97,  208 => 95,  198 => 91,  194 => 90,  190 => 89,  186 => 88,  181 => 86,  177 => 85,  173 => 84,  169 => 83,  165 => 82,  159 => 79,  155 => 77,  151 => 76,  148 => 75,  146 => 74,  138 => 69,  129 => 63,  72 => 8,  65 => 7,  59 => 4,  52 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -279,16 +301,18 @@ Liste des Items
 }
 </style>
 
-<h1>Liste des Produits</h1>
+<h1>Liste des élements</h1>
 
-<form method=\"get\" action=\"{{ base_url('/blog') }}\">
-<input
-  placeholder=\"Rechercher vos elements\"
-  class=\"input\"
-  name=\"text\"
-  type=\"text\"
-/>    <button type=\"submit\">Rechercher</button>
+<form method=\"get\" action=\"{{ base_url('/items/searchItems') }}\">
+    <input
+        placeholder=\"Rechercher vos éléments\"
+        class=\"input\"
+        name=\"text\"
+        type=\"text\"
+        value=\"{{ search | default('') }}\" >
+    <button type=\"submit\">Rechercher</button>
 </form>
+
 
   {% if items is not empty %}
         <div class=\"product-list\">
@@ -301,8 +325,13 @@ Liste des Items
                         <p><strong>Description:</strong> {{ items.adescription }}</p>
                         <p><strong>Localisation:</strong> {{ items.localisation }}</p>
                         <p><strong>Type de matériel:</strong> {{ items.typeMateriel }}</p>
+                        <p><strong>Capacité:</strong> {{ items.capacité }}</p>
+                        <p><strong>Nombre Tables</strong> {{ items.NbTables }}</p>
+
+                        <p><strong>Nombre Etudiant</strong> {{ items.NbEtudiants }}</p>
+                        <p><strong>Nombre Enseignants</strong> {{ items.NbEnseignants }}</p>
                         <img src={{items.image_url}} widht=\"100\" height=\"100\"/>
-                        <a href=\"{{ base_url('details') }}\" class=\"input\">More Details</a>
+                        <a href=\"{{ base_url('details/' ~ items.id) }}\" class=\"input\">More Details</a>
                     </div>
                 </div>
             {% endfor %}

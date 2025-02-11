@@ -16,12 +16,16 @@ class Items extends Seeder
                 'nom'          => $faker->word(),
                 'adescription' => $faker->sentence(),
                 'localisation' => $faker->city(),
-                'typeMateriel' => $faker->randomElement(['Électronique', 'Audiovisuel', 'Fournitures de bureau', 'Autre']),
-                // Utilisation de picsum.photos pour générer une image aléatoire
-                'image_url'    => 'https://picsum.photos/640/480?random=' . $faker->randomNumber(), // Générer une URL d'image dynamique
+                'typeMateriel' => $faker->randomElement(['Ordinateur', 'Tablette', 'Imprimantes ', 'Extincteur', 'VIdeoProjecteurs','Copieurs']),
+                'quantité'     => $faker->numberBetween(1, 50),
+                'capacité'     => $faker->numberBetween(10, 100),
+                'NbTables'     => $faker->numberBetween(1, 20),
+                'NbEtudiants'  => $faker->numberBetween(0, 50),
+                'NbEnseignants' => $faker->numberBetween(0, 5),
+                'image_url'    => 'https://picsum.photos/640/480?random=' . $faker->randomNumber(),
             ];
 
-            $this->db->table('Items')->insert($data);
+            $this->db->table('items')->insert($data);
         }
     }
 }

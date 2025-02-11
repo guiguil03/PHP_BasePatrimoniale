@@ -84,7 +84,7 @@ Se connecter
 
 </style>
 <div class="divForm">
-<form class="form" method="POST" action="{{ base_url('connexion') }}">
+<form class="form" method="POST" action="{{ base_url('/register') }}">
  <span class="input-span">
     <label for="nom" class="label">Nom </label>
     <input type="text" name="nom" id="nom" required
@@ -93,11 +93,14 @@ Se connecter
     <label for="adresseMail" class="label">Email</label>
     <input type="text" name="adresseMail" id="adresseMail" required
   /></span>
-   <button class="submit" type="button" id="btnConnexion" class="btn btn-primary">Se Connecter</button>
+   <button class="submit" type="submit" id="btnConnexion" class="btn btn-primary">Se Connecter</button>
 
 </form>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+</script>
+
 
 {% endblock %}
 

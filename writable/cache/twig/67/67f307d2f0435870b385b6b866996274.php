@@ -149,48 +149,53 @@ class __TwigTemplate_b4f1fcd48a417e428af315a808962313 extends Template
 
 </style>
 <div class=\"divForm\">
-<form class=\"form\" method=\"POST\" action=\"";
+  <form class=\"form\" method=\"POST\" action=\"";
         // line 87
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("connexion"), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("/connexion"), "html", null, true);
         yield "\">
- <span class=\"input-span\">
-    <label for=\"nom\" class=\"label\">Nom </label>
-    <input type=\"text\" name=\"nom\" id=\"nom\" required
-  /></span>
-  <span class=\"input-span\">
-    <label for=\"adresseMail\" class=\"label\">Email</label>
-    <input type=\"text\" name=\"adresseMail\" id=\"adresseMail\" required
-  /></span>
- 
-  <span class=\"span\"><a href=\"";
+    <span class=\"input-span\">
+      <label for=\"nom\" class=\"label\">Nom</label>
+      <input type=\"text\" name=\"nom\" id=\"nom\" required />
+    </span>
+    <span class=\"input-span\">
+      <label for=\"adresseMail\" class=\"label\">Email</label>
+      <input type=\"text\" name=\"adresseMail\" id=\"adresseMail\" required />
+    </span>
+    <span class=\"span\">
+      <a href=\"";
         // line 97
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("registerForm"), "html", null, true);
-        yield "\">Forgot password?</a></span>
-  <button class=\"submit\" type=\"button\" id=\"btnConnexion\" class=\"btn btn-primary\">Se Connecter</button>
-  <div class=\"mb-3\">
-    <span id=\"btnMsg\" class=\"btn btn-outline-danger d-none\"></span>
-  </div>
-  <span class=\"span\">Vous n'avez pas de compte ? <a href=\"";
-        // line 102
+        yield "\">Forgot password?</a>
+    </span>
+    <button class=\"submit btn btn-primary\" type=\"submit\" id=\"btnConnexion\">Se Connecter</button>
+    <div class=\"mb-3\">
+      <span id=\"btnMsg\" class=\"btn btn-outline-danger d-none\"></span>
+    </div>
+    <span class=\"span\">Vous n'avez pas de compte ? 
+      <a href=\"";
+        // line 104
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(base_url("registerForm"), "html", null, true);
-        yield "\">Sign up</a></span>
-</form>
+        yield "\">Sign up</a>
+    </span>
+  </form>
+  <div id=\"btnMsg\" class=\"d-none\"></div>
 </div>
+
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js\" integrity=\"sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
 
 ";
         yield from [];
     }
 
-    // line 110
+    // line 115
     /**
      * @return iterable<null|scalar|\Stringable>
      */
     public function block_javascripts(array $context, array $blocks = []): iterable
     {
         $macros = $this->macros;
-        // line 111
-        yield "<script src=\"Assets/js/connexion.js\"></script>
+        // line 116
+        yield "<script src=\"/Assets/js/connexion.js\"></script>
 ";
         yield from [];
     }
@@ -216,7 +221,7 @@ class __TwigTemplate_b4f1fcd48a417e428af315a808962313 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  193 => 111,  186 => 110,  175 => 102,  167 => 97,  154 => 87,  73 => 8,  66 => 7,  60 => 4,  53 => 3,  42 => 1,);
+        return array (  198 => 116,  191 => 115,  177 => 104,  167 => 97,  154 => 87,  73 => 8,  66 => 7,  60 => 4,  53 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -307,31 +312,36 @@ Se connecter
 
 </style>
 <div class=\"divForm\">
-<form class=\"form\" method=\"POST\" action=\"{{ base_url('connexion') }}\">
- <span class=\"input-span\">
-    <label for=\"nom\" class=\"label\">Nom </label>
-    <input type=\"text\" name=\"nom\" id=\"nom\" required
-  /></span>
-  <span class=\"input-span\">
-    <label for=\"adresseMail\" class=\"label\">Email</label>
-    <input type=\"text\" name=\"adresseMail\" id=\"adresseMail\" required
-  /></span>
- 
-  <span class=\"span\"><a href=\"{{base_url('registerForm')}}\">Forgot password?</a></span>
-  <button class=\"submit\" type=\"button\" id=\"btnConnexion\" class=\"btn btn-primary\">Se Connecter</button>
-  <div class=\"mb-3\">
-    <span id=\"btnMsg\" class=\"btn btn-outline-danger d-none\"></span>
-  </div>
-  <span class=\"span\">Vous n'avez pas de compte ? <a href=\"{{base_url('registerForm')}}\">Sign up</a></span>
-</form>
+  <form class=\"form\" method=\"POST\" action=\"{{ base_url('/connexion') }}\">
+    <span class=\"input-span\">
+      <label for=\"nom\" class=\"label\">Nom</label>
+      <input type=\"text\" name=\"nom\" id=\"nom\" required />
+    </span>
+    <span class=\"input-span\">
+      <label for=\"adresseMail\" class=\"label\">Email</label>
+      <input type=\"text\" name=\"adresseMail\" id=\"adresseMail\" required />
+    </span>
+    <span class=\"span\">
+      <a href=\"{{ base_url('registerForm') }}\">Forgot password?</a>
+    </span>
+    <button class=\"submit btn btn-primary\" type=\"submit\" id=\"btnConnexion\">Se Connecter</button>
+    <div class=\"mb-3\">
+      <span id=\"btnMsg\" class=\"btn btn-outline-danger d-none\"></span>
+    </div>
+    <span class=\"span\">Vous n'avez pas de compte ? 
+      <a href=\"{{ base_url('registerForm') }}\">Sign up</a>
+    </span>
+  </form>
+  <div id=\"btnMsg\" class=\"d-none\"></div>
 </div>
+
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js\" integrity=\"sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
 
 {% endblock %}
 
 
 {% block javascripts %}
-<script src=\"Assets/js/connexion.js\"></script>
+<script src=\"/Assets/js/connexion.js\"></script>
 {% endblock %}
 ", "connexion.html.twig", "/home/vagrant/Site/app/Views/connexion.html.twig");
     }
