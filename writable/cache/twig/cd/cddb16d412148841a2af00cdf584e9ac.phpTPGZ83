@@ -1,0 +1,167 @@
+<?php
+
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Extension\CoreExtension;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+use Twig\TemplateWrapper;
+
+/* map_view.html.twig */
+class __TwigTemplate_a89ffe6055102504808d8f00f9e84b7e extends Template
+{
+    private Source $source;
+    /**
+     * @var array<string, Template>
+     */
+    private array $macros = [];
+
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->source = $this->getSourceContext();
+
+        $this->blocks = [
+            'title' => [$this, 'block_title'],
+            'content' => [$this, 'block_content'],
+        ];
+    }
+
+    protected function doGetParent(array $context): bool|string|Template|TemplateWrapper
+    {
+        // line 1
+        return "base.html.twig";
+    }
+
+    protected function doDisplay(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $this->parent = $this->loadTemplate("base.html.twig", "map_view.html.twig", 1);
+        yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
+    }
+
+    // line 3
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_title(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        // line 4
+        yield "Maps
+";
+        yield from [];
+    }
+
+    // line 7
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_content(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        // line 8
+        yield "<div id=\"map\" style=\"height: 500px;\"></div>
+<script>
+  function initMap() {
+      var location = { lat: 48.8566, lng: 2.3522 }; // Exemple : Paris
+      var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: location
+      });
+      var marker = new google.maps.Marker({
+          position: location,
+          map: map
+      });
+  }
+  // Charger la carte
+  google.maps.event.addDomListener(window, 'load', initMap);
+
+  var locations = <?php echo json_encode(\$locations); ?>;
+locations.forEach(function(location) {
+    var marker = new google.maps.Marker({
+        position: { lat: location.lat, lng: location.lng },
+        map: map,
+        title: location.name
+    });
+});
+
+</script>
+
+
+";
+        yield from [];
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getTemplateName(): string
+    {
+        return "map_view.html.twig";
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function isTraitable(): bool
+    {
+        return false;
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getDebugInfo(): array
+    {
+        return array (  72 => 8,  65 => 7,  59 => 4,  52 => 3,  41 => 1,);
+    }
+
+    public function getSourceContext(): Source
+    {
+        return new Source("{% extends 'base.html.twig' %}
+
+{% block title %}
+Maps
+{% endblock %}
+
+{% block content %}
+<div id=\"map\" style=\"height: 500px;\"></div>
+<script>
+  function initMap() {
+      var location = { lat: 48.8566, lng: 2.3522 }; // Exemple : Paris
+      var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: location
+      });
+      var marker = new google.maps.Marker({
+          position: location,
+          map: map
+      });
+  }
+  // Charger la carte
+  google.maps.event.addDomListener(window, 'load', initMap);
+
+  var locations = <?php echo json_encode(\$locations); ?>;
+locations.forEach(function(location) {
+    var marker = new google.maps.Marker({
+        position: { lat: location.lat, lng: location.lng },
+        map: map,
+        title: location.name
+    });
+});
+
+</script>
+
+
+{% endblock %}", "map_view.html.twig", "/home/vagrant/Site/app/Views/map_view.html.twig");
+    }
+}
